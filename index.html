@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Grupo Cafetero Armar S.A. de C.V. - Productores, procesadores y comercializadores de café de altura verde, tostado y molido en Huatusco, Veracruz." />
+  <meta name="keywords"
+    content="café de altura, Huatusco Veracruz, café verde, café oro, café tostado, maquila de café, venta de café al mayoreo, Grupo Cafetero Armar" />
+  <meta name="author" content="Grupo Cafetero Armar S.A. de C.V." />
+
+  <!-- Open Graph / Meta Social -->
+  <meta property="og:title" content="Grupo Cafetero Armar S.A. de C.V. | Café de Altura Huatusco, Veracruz" />
+  <meta property="og:description" content="El café mexicano que conecta origen y mercado." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image"
+    content="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1200&auto=format&fit=crop&q=80" />
+
+  <title>Grupo Cafetero Armar S.A. de C.V. | Café de Altura Huatusco, Veracruz</title>
+
+  <!-- Tailwind CSS vía CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            darkbg: '#0E140E',
+            darkcard: '#0B220D',
+            darkborder: '#1C2B1B',
+            darktext: '#1C241B',
+            espresso: {
+              DEFAULT: '#0E140E',
+              light: '#1C2B1B',
+              dark: '#080C08'
+            },
+            roast: {
+              DEFAULT: '#1E431B',
+              light: '#2D5A27'
+            },
+            leaf: {
+              DEFAULT: '#2D5A27',
+              hover: '#1E431B',
+              light: '#3E7B36'
+            },
+            cream: {
+              DEFAULT: '#EBE7DF',
+              card: '#F4F2EC',
+              accent: '#D8D2C6'
+            },
+            gold: {
+              DEFAULT: '#C4A462',
+              hover: '#B39250',
+              light: '#E8D8B0'
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            heading: ['Playfair Display', 'Georgia', 'serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- FontAwesome v6 Iconos CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- AOS (Animate On Scroll) Library CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- Estilos Personalizados -->
+  <link rel="stylesheet" href="assets/css/custom.css" />
+
+  <!-- Preload de la imagen principal del Hero -->
+  <link rel="preload" as="image" href="assets/images/hero-coffee-basket.webp" type="image/webp" />
+
+  <!-- Identity Widget para Netlify / Decap CMS -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+
+<body class="bg-cream text-darktext font-body selection:bg-gold selection:text-darkbg antialiased">
+
+  <!-- ==========================================
+       HEADER & NAVEGACIÓN PRINCIPAL
+       ========================================== -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-header py-5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+
+        <!-- Logo de la Empresa -->
+        <a href="#inicio" class="flex items-center space-x-3 group">
+          <div
+            class="w-11 h-11 rounded-full bg-leaf flex items-center justify-center border border-gold/40 shadow-lg group-hover:scale-105 transition-transform duration-300">
+            <i class="fas fa-mug-hot text-gold text-xl"></i>
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="font-heading font-bold text-xl text-white tracking-wide leading-tight group-hover:text-gold transition-colors">
+              GRUPO CAFETERO ARMAR
+            </span>
+            <span class="text-[10px] font-semibold tracking-widest text-gold/90 uppercase">
+              S.A. DE C.V. &bull; HUATUSCO, VER.
+            </span>
+          </div>
+        </a>
+
+        <!-- Enlaces de Navegación Desktop -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#nosotros"
+            class="desktop-nav-link text-white hover:text-gold text-sm font-medium transition-colors">
+            Nosotros
+          </a>
+          <a href="#productos"
+            class="desktop-nav-link text-white hover:text-gold text-sm font-medium transition-colors">
+            Productos y Servicios
+          </a>
+          <a href="#diferenciadores"
+            class="desktop-nav-link text-white hover:text-gold text-sm font-medium transition-colors">
+            Por Qué Elegirnos
+          </a>
+          <a href="#galeria"
+            class="desktop-nav-link text-white hover:text-gold text-sm font-medium transition-colors">
+            Galería
+          </a>
+          <a href="#faq"
+            class="desktop-nav-link text-white hover:text-gold text-sm font-medium transition-colors">
+            FAQ
+          </a>
+          <a href="#contacto"
+            class="desktop-nav-link text-white hover:text-gold text-sm font-medium transition-colors">
+            Contacto
+          </a>
+        </nav>
+
+        <!-- Botón CTA WhatsApp (Desktop): Borde redondeado fino en texto e icono blanco -->
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="https://wa.me/522717390957?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20sobre%20sus%20productos%20y%20servicios%20de%20caf%C3%A9."
+            target="_blank" rel="noopener noreferrer"
+            class="border border-white/60 hover:border-gold text-white hover:text-gold font-semibold text-xs sm:text-sm px-5 py-2 rounded-full transition-all flex items-center space-x-2">
+            <i class="fab fa-whatsapp text-base"></i>
+            <span>Cotizar por WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Botón Menú Móvil Hamburger -->
+        <button id="mobile-menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false"
+          class="md:hidden text-white/90 hover:text-gold focus:outline-none p-2">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobile-menu-overlay"
+      class="fixed inset-0 bg-darkbg/80 backdrop-blur-sm z-40 hidden transition-opacity duration-300"></div>
+    <div id="mobile-menu"
+      class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-darkbg z-50 transform translate-x-full transition-transform duration-300 ease-in-out p-6 flex flex-col justify-between shadow-2xl border-l border-gold/20">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-white/10">
+          <div class="flex items-center space-x-2">
+            <i class="fas fa-mug-hot text-gold text-lg"></i>
+            <span class="font-heading font-bold text-white text-lg">Menú</span>
+          </div>
+          <button id="mobile-menu-close" aria-label="Cerrar menú" class="text-white/70 hover:text-gold p-2">
+            <i class="fas fa-xmark text-2xl"></i>
+          </button>
+        </div>
+
+        <nav class="mt-8 flex flex-col space-y-5">
+          <a href="#inicio"
+            class="mobile-nav-link text-white/90 hover:text-gold font-medium text-lg flex items-center space-x-3 py-2 border-b border-white/5">
+            <i class="fas fa-home text-gold/80 w-6"></i>
+            <span>Inicio</span>
+          </a>
+          <a href="#nosotros"
+            class="mobile-nav-link text-white/90 hover:text-gold font-medium text-lg flex items-center space-x-3 py-2 border-b border-white/5">
+            <i class="fas fa-building text-gold/80 w-6"></i>
+            <span>Nosotros</span>
+          </a>
+          <a href="#productos"
+            class="mobile-nav-link text-white/90 hover:text-gold font-medium text-lg flex items-center space-x-3 py-2 border-b border-white/5">
+            <i class="fas fa-seedling text-gold/80 w-6"></i>
+            <span>Productos y Servicios</span>
+          </a>
+          <a href="#diferenciadores"
+            class="mobile-nav-link text-white/90 hover:text-gold font-medium text-lg flex items-center space-x-3 py-2 border-b border-white/5">
+            <i class="fas fa-award text-gold/80 w-6"></i>
+            <span>Por Qué Elegirnos</span>
+          </a>
+          <a href="#galeria"
+            class="mobile-nav-link text-white/90 hover:text-gold font-medium text-lg flex items-center space-x-3 py-2 border-b border-white/5">
+            <i class="fas fa-images text-gold/80 w-6"></i>
+            <span>Galería</span>
+          </a>
+          <a href="#faq"
+            class="mobile-nav-link text-white/90 hover:text-gold font-medium text-lg flex items-center space-x-3 py-2 border-b border-white/5">
+            <i class="fas fa-circle-question text-gold/80 w-6"></i>
+            <span>Preguntas Frecuentes</span>
+          </a>
+          <a href="#contacto"
+            class="mobile-nav-link text-white/90 hover:text-gold font-medium text-lg flex items-center space-x-3 py-2 border-b border-white/5">
+            <i class="fas fa-envelope text-gold/80 w-6"></i>
+            <span>Contacto</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="pt-6 border-t border-white/10 space-y-4">
+        <a href="https://wa.me/522717390957?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n."
+          target="_blank" rel="noopener noreferrer"
+          class="w-full border border-white/60 hover:border-gold text-white font-semibold py-3 px-4 rounded-full flex items-center justify-center space-x-2 text-center transition-colors">
+          <i class="fab fa-whatsapp text-lg"></i>
+          <span>Cotizar por WhatsApp</span>
+        </a>
+        <p class="text-xs text-center text-stone-400">
+          Huatusco, Veracruz, México
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       HERO SECTION (Fondo Oscuro #0E140E)
+       ========================================== -->
+  <!-- ==========================================
+       HERO SECTION (Fondo Oscuro #0E140E con imagen de canasta de café)
+       ========================================== -->
+  <section id="inicio" class="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden hero-bg">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+        <!-- Texto Principal Hero (8 Columnas en Desktop) -->
+        <div class="lg:col-span-8 space-y-8">
+
+          <!-- Badge de Región / Origen -->
+          <div
+            class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-gold/15 border border-gold/40 text-gold text-xs sm:text-sm font-semibold tracking-wide uppercase backdrop-blur-sm">
+            <i class="fas fa-location-dot"></i>
+            <span>Huatusco, Veracruz &bull; Origen de Altura</span>
+          </div>
+
+          <!-- Título Principal Exacto: "El café mexicano que conecta origen y mercado" -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-normal text-white leading-tight font-serif">
+            El café mexicano que conecta <span class="text-gold italic font-serif">origen y mercado</span>
+          </h1>
+
+          <!-- Subtítulo -->
+          <p class="text-lg sm:text-xl text-stone-300 font-normal leading-relaxed max-w-2xl font-sans">
+            En <strong class="text-white font-semibold">Grupo Cafetero Armar S.A. de C.V.</strong> nos dedicamos al
+            cultivo, procesamiento y comercialización de granos de café de estricta altura, cosechados en el corazón
+            de la Sierra de Veracruz.
+          </p>
+
+          <!-- Lema de Marca -->
+          <div class="flex items-center space-x-3 pt-2">
+            <div class="w-10 h-0.5 bg-gold"></div>
+            <p class="text-xl sm:text-2xl font-serif italic text-gold font-medium tracking-wide">
+              "El café habla por ti"
+            </p>
+          </div>
+
+          <!-- Botones CTA -->
+          <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-5">
+            <!-- Botón Principal: Fondo verde botánico (#2D5A27) con hover a verde más oscuro (#1E431B) -->
+            <a href="https://wa.me/522717390957?text=Hola%2C%20quisiera%20cotizar%20caf%C3%A9%20con%20Grupo%20Cafetero%20Armar."
+              target="_blank" rel="noopener noreferrer"
+              class="bg-leaf hover:bg-leaf-dark text-white font-bold px-8 py-4 rounded-full shadow-xl flex items-center justify-center space-x-3 text-base transition-all transform hover:-translate-y-0.5">
+              <i class="fab fa-whatsapp text-2xl"></i>
+              <span>Cotizar por WhatsApp</span>
+            </a>
+
+            <!-- Botón Secundario: Transparente con borde delgado blanco y flecha en dorado (#C4A462) -->
+            <a href="#productos"
+              class="bg-transparent border border-white/60 hover:border-gold text-white font-semibold px-8 py-4 rounded-full flex items-center justify-center space-x-3 text-base backdrop-blur-sm transition-all group">
+              <span>Conocer nuestros cafés</span>
+              <i class="fas fa-arrow-right text-sm text-gold group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+
+          <!-- Franja de características inferior del Hero: Iconos vectoriales dorados (#C4A462) sobre contenedor transparente -->
+          <div class="pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 bg-transparent">
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-full bg-transparent flex items-center justify-center text-gold text-xl shrink-0">
+                <i class="fas fa-mountain-sun"></i>
+              </div>
+              <div>
+                <span class="block text-sm font-bold text-white font-serif">Origen de Altura</span>
+                <span class="text-xs text-stone-300">+1,200 msnm Huatusco</span>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-full bg-transparent flex items-center justify-center text-gold text-xl shrink-0">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <div>
+                <span class="block text-sm font-bold text-white font-serif">Relaciones Confiables</span>
+                <span class="text-xs text-stone-300">Trato directo sustentable</span>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-full bg-transparent flex items-center justify-center text-gold text-xl shrink-0">
+                <i class="fas fa-award"></i>
+              </div>
+              <div>
+                <span class="block text-sm font-bold text-white font-serif">Estándares de Calidad</span>
+                <span class="text-xs text-stone-300">Selección física y trilla</span>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-full bg-transparent flex items-center justify-center text-gold text-xl shrink-0">
+                <i class="fas fa-boxes-packing"></i>
+              </div>
+              <div>
+                <span class="block text-sm font-bold text-white font-serif">Mercado Directo</span>
+                <span class="text-xs text-stone-300">Suministro al mayoreo</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Tarjeta Flotante de Acompañamiento ("Cultivamos relaciones") (4 Columnas en Desktop) -->
+        <div class="lg:col-span-4 flex justify-start lg:justify-end items-start pt-6 lg:pt-0" data-aos="fade-left" data-aos-delay="300">
+          <div class="hero-floating-card p-5 rounded-2xl shadow-2xl flex items-center space-x-4 max-w-xs transform hover:scale-105 transition-transform duration-300">
+            <div class="w-12 h-12 rounded-xl bg-gold/20 flex items-center justify-center text-gold text-2xl shrink-0 border border-gold/40 shadow-inner">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <div>
+              <span class="block font-serif font-bold text-gold text-sm sm:text-base leading-tight">
+                Cultivamos relaciones.
+              </span>
+              <span class="block font-serif text-white text-xs sm:text-sm leading-tight mt-1">
+                Cosechamos confianza.
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECCIÓN "¿QUIÉNES SOMOS?" Y BENEFICIOS (Fondo Claro #EBE7DF)
+       ========================================== -->
+  <section id="nosotros" class="py-24 bg-cream relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Encabezado de Sección -->
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <span class="text-xs sm:text-sm font-bold uppercase tracking-widest text-gold mb-2 block">
+          Nuestra Identidad & Valor
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-darktext font-serif">
+          ¿Quiénes Somos?
+        </h2>
+        <div class="w-20 h-1 bg-gold mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <!-- Contenido Historia con Imagen y Caja de Cita Destacada -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
+
+        <!-- Tarjeta de Imagen -->
+        <div class="lg:col-span-5" data-aos="fade-right">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl group border-4 border-white">
+            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&auto=format&fit=crop&q=80"
+              alt="Granos de café de alta calidad seleccionados a mano"
+              class="w-full h-[450px] object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-darkbg/85 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="text-xs uppercase font-bold tracking-widest text-gold">Huatusco, Veracruz</span>
+              <h3 class="text-xl font-bold font-serif">Tradición y Excelencia Cafetalera</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Texto de Historia & Botón "Conoce más sobre nosotros" -->
+        <div class="lg:col-span-7 space-y-6" data-aos="fade-left">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 bg-leaf/10 text-leaf rounded-lg text-sm font-bold">
+            <i class="fas fa-calendar-check text-gold"></i>
+            <span>Fundada el 3 de Abril de 2019</span>
+          </div>
+
+          <h3 class="text-2xl sm:text-3xl font-normal text-darktext font-serif leading-snug">
+            Pasión por la cafeticultura y dignidad por el origen
+          </h3>
+
+          <p class="text-stone-700 text-base sm:text-lg leading-relaxed">
+            <strong class="text-darktext font-semibold">Grupo Cafetero Armar S.A. de C.V.</strong> nació en Huatusco,
+            Veracruz, fruto de la convicción de conectar de forma transparente y justa los frutos de nuestras montañas con los comercializadores y tostadores más exigentes.
+          </p>
+
+          <p class="text-stone-600 text-base leading-relaxed">
+            Nuestra ubicación en la Sierra de Veracruz nos otorga variedades de café de altura excepcionales.
+            Supervisamos cada fase con estándares estrictos: desmanche, secado en patio, clasificación física en verde y curvas óptimas de tueste.
+          </p>
+
+          <!-- Botón: Fondo verde oscuro (#1E431B) con texto blanco y flecha -->
+          <div class="pt-2">
+            <a href="#contacto"
+              class="bg-roast hover:bg-leaf text-white font-bold py-3.5 px-7 rounded-xl shadow-md inline-flex items-center space-x-3 transition-colors">
+              <span>Conoce más sobre nosotros</span>
+              <i class="fas fa-arrow-right text-gold text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Caja de Cita Destacada (Quote Box): Fondo verde profundo #0B220D, comillas grandes y texto en dorado #C4A462 con fino borde en #C4A462 -->
+      <div class="mb-20" data-aos="fade-up">
+        <div class="bg-darkcard border border-gold p-8 sm:p-12 rounded-3xl shadow-2xl text-white relative overflow-hidden">
+          <div class="absolute -top-4 -left-2 text-gold/20 font-serif text-9xl pointer-events-none select-none">
+            “
+          </div>
+          <div class="relative z-10 max-w-4xl mx-auto text-center space-y-4">
+            <i class="fas fa-quote-left text-gold text-3xl sm:text-4xl block mx-auto"></i>
+            <p class="text-xl sm:text-2xl lg:text-3xl font-serif italic text-gold leading-relaxed">
+              "Nuestro compromiso es ser el puente que conecta el trabajo respetuoso de nuestros productores en Huatusco con los mercados más exigentes, garantizando trazabilidad, calidad constante y comercio justo en cada grano."
+            </p>
+            <div class="pt-2">
+              <span class="block font-bold text-white tracking-wider uppercase text-sm font-sans">
+                Grupo Cafetero Armar S.A. de C.V.
+              </span>
+              <span class="text-xs text-gold/90 uppercase tracking-widest font-sans">
+                Huatusco, Veracruz, México
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjetas de Valores Corporativos / Beneficios -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- Valor 1: Exigencia -->
+        <div
+          class="bg-cream-card p-8 rounded-2xl shadow-md border border-cream-accent hover:border-gold transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="w-14 h-14 rounded-2xl bg-darkcard text-gold flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform border border-gold/30">
+            <i class="fas fa-award"></i>
+          </div>
+          <h3 class="text-xl font-bold text-darktext font-serif mb-3">Exigencia en Origen</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">
+            Rigurosa selección de humedad, densidad y calibre del grano oro para entregar lotes consistentes sin defectos.
+          </p>
+        </div>
+
+        <!-- Valor 2: Transparencia -->
+        <div
+          class="bg-cream-card p-8 rounded-2xl shadow-md border border-cream-accent hover:border-gold transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+          <div
+            class="w-14 h-14 rounded-2xl bg-leaf text-white flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3 class="text-xl font-bold text-darktext font-serif mb-3">Trato Directo</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">
+            Alianzas comerciales transparentes con trazabilidad garantizada desde las parcelas de Huatusco.
+          </p>
+        </div>
+
+        <!-- Valor 3: Atención Personalizada -->
+        <div
+          class="bg-cream-card p-8 rounded-2xl shadow-md border border-cream-accent hover:border-gold transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
+          <div
+            class="w-14 h-14 rounded-2xl bg-roast text-gold flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fas fa-user-shield"></i>
+          </div>
+          <h3 class="text-xl font-bold text-darktext font-serif mb-3">Atención Mayorista</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">
+            Adaptamos volúmenes, perfiles de tueste y empaque a la medida exacta de distribuidores y torrefactores.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECCIÓN DE OFERTA / CAFÉ VERDE MEXICANO
+       ========================================== -->
+  <section id="productos" class="py-24 bg-cream border-t border-cream-accent relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Encabezado -->
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <span class="text-xs sm:text-sm font-bold uppercase tracking-widest text-gold mb-2 block">
+          Oferta Especializada
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-darktext font-serif">
+          Café Verde Mexicano & Servicios
+        </h2>
+        <p class="text-stone-600 mt-3 text-base">
+          Soluciones integrales de grano de estricta altura para comercializadores, tostadores y marcas de especialidad.
+        </p>
+        <div class="w-20 h-1 bg-gold mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <!-- Grid de Productos y Tarjeta Contigua "Cafés que cuentan historias" -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+        <!-- Columna de 3 Tarjetas de Productos en tono crema ligeramente más claro (#F4F2EC) con iconos lineales oscuros -->
+        <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- Producto 1: Café Verde / Oro -->
+          <div
+            class="product-card bg-cream-card rounded-2xl overflow-hidden shadow-md border border-cream-accent flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <div class="relative h-48 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=600&auto=format&fit=crop&q=80"
+                  alt="Café Verde Oro de Altura Huatusco" class="w-full h-full object-cover img-zoom">
+                <span class="absolute top-3 right-3 gold-badge px-3 py-1 rounded-full text-xs shadow-md">
+                  Grano Oro
+                </span>
+              </div>
+              <div class="p-6">
+                <div class="w-10 h-10 rounded-xl bg-darktext/10 text-darktext flex items-center justify-center text-lg mb-3">
+                  <i class="fas fa-seedling"></i>
+                </div>
+                <h3 class="text-xl font-bold text-darktext font-serif mb-2">
+                  Café Verde / Oro de Altura
+                </h3>
+                <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                  Strictly High Grown (SHG) cultivado a más de 1,200 msnm. Clasificación por humedad y densidad ideal para exportación y tostado.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6">
+              <a href="https://wa.me/522717390957?text=Hola%2C%20solicito%20cotizaci%C3%B3n%20de%20Caf%C3%A9%20Verde%20%2F%20Oro."
+                target="_blank" rel="noopener noreferrer"
+                class="w-full py-2.5 px-4 bg-roast hover:bg-leaf text-white font-semibold text-sm rounded-xl text-center flex items-center justify-center space-x-2 transition-colors">
+                <i class="fab fa-whatsapp"></i>
+                <span>Cotizar Café Verde</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Producto 2: Café Tostado y Molido -->
+          <div
+            class="product-card bg-cream-card rounded-2xl overflow-hidden shadow-md border border-cream-accent flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+            <div>
+              <div class="relative h-48 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80"
+                  alt="Café Tostado y Molido Gourmet" class="w-full h-full object-cover img-zoom">
+                <span
+                  class="absolute top-3 right-3 bg-leaf text-white font-bold px-3 py-1 rounded-full text-xs shadow-md">
+                  Gourmet
+                </span>
+              </div>
+              <div class="p-6">
+                <div class="w-10 h-10 rounded-xl bg-darktext/10 text-darktext flex items-center justify-center text-lg mb-3">
+                  <i class="fas fa-fire-burner"></i>
+                </div>
+                <h3 class="text-xl font-bold text-darktext font-serif mb-2">
+                  Café Tostado y Molido
+                </h3>
+                <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                  Tueste continuo que resalta notas acarameladas, acidez balanceada y fragancia intensa distintiva de Huatusco.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6">
+              <a href="https://wa.me/522717390957?text=Hola%2C%20solicito%20cotizaci%C3%B3n%20de%20Caf%C3%A9%20Tostado%20y%20Molido."
+                target="_blank" rel="noopener noreferrer"
+                class="w-full py-2.5 px-4 bg-roast hover:bg-leaf text-white font-semibold text-sm rounded-xl text-center flex items-center justify-center space-x-2 transition-colors">
+                <i class="fab fa-whatsapp"></i>
+                <span>Cotizar Tostado</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Producto 3: Servicios de Maquila -->
+          <div
+            class="product-card bg-cream-card rounded-2xl overflow-hidden shadow-md border border-cream-accent flex flex-col justify-between md:col-span-2" data-aos="fade-up" data-aos-delay="300">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+              <div class="relative h-48 md:h-full overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&auto=format&fit=crop&q=80"
+                  alt="Servicios de Maquila y Procesamiento de Café" class="w-full h-full object-cover img-zoom">
+                <span
+                  class="absolute top-3 right-3 bg-gold text-darkbg font-bold px-3 py-1 rounded-full text-xs shadow-md">
+                  Maquila Integral
+                </span>
+              </div>
+              <div class="p-6 flex flex-col justify-between">
+                <div>
+                  <div class="w-10 h-10 rounded-xl bg-darktext/10 text-darktext flex items-center justify-center text-lg mb-3">
+                    <i class="fas fa-gears"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-darktext font-serif mb-2">
+                    Servicios de Maquila & Beneficio
+                  </h3>
+                  <p class="text-stone-600 text-sm leading-relaxed mb-4">
+                    Procesamiento a la medida: recepción, secado en patio, trilla para grano oro, tueste especializado y empacado para tu propia marca.
+                  </p>
+                </div>
+                <a href="https://wa.me/522717390957?text=Hola%2C%20me%20interesa%20el%20Servicio%20de%20Maquila%20y%20Procesamiento."
+                  target="_blank" rel="noopener noreferrer"
+                  class="w-full py-2.5 px-4 bg-roast hover:bg-leaf text-white font-semibold text-sm rounded-xl text-center flex items-center justify-center space-x-2 transition-colors">
+                  <i class="fab fa-whatsapp"></i>
+                  <span>Consultar Servicios de Maquila</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Tarjeta Contigua "Cafés que cuentan historias": Fondo verde muy oscuro (#0B220D) con texto blanco y dorado (#C4A462) -->
+        <div class="lg:col-span-4" data-aos="fade-left">
+          <div class="bg-darkcard border border-gold rounded-2xl p-8 shadow-xl text-white h-full flex flex-col justify-between relative overflow-hidden">
+            <div class="space-y-6 z-10 relative">
+              <div class="w-14 h-14 rounded-2xl bg-gold/20 text-gold flex items-center justify-center text-2xl border border-gold/40">
+                <i class="fas fa-book-open text-gold"></i>
+              </div>
+              <span class="text-xs uppercase tracking-widest text-gold font-bold block">
+                Origen & Tradición
+              </span>
+              <h3 class="text-2xl sm:text-3xl font-serif text-white leading-snug">
+                Cafés que cuentan historias
+              </h3>
+              <p class="text-stone-300 text-sm leading-relaxed">
+                Cada saco cosechado en Huatusco guarda el trabajo honesto de familias cafetaleras que por generaciones han protegido la sombra de la montaña.
+              </p>
+              <ul class="space-y-3 text-sm text-stone-200 border-t border-white/10 pt-4">
+                <li class="flex items-center space-x-2">
+                  <i class="fas fa-check text-gold text-xs"></i>
+                  <span>Trazabilidad 100% verificada</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <i class="fas fa-check text-gold text-xs"></i>
+                  <span>Perfiles aromáticos consistentes</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                  <i class="fas fa-check text-gold text-xs"></i>
+                  <span>Compromiso con el productor local</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pt-8 z-10 relative">
+              <a href="https://wa.me/522717390957?text=Hola%2C%20deseo%20informaci%C3%B3n%20sobre%20sus%20lotes%20de%20caf%C3%A9."
+                target="_blank" rel="noopener noreferrer"
+                class="w-full py-3.5 px-6 bg-gold hover:bg-gold-hover text-darkbg font-bold rounded-xl text-center flex items-center justify-center space-x-2 shadow-lg transition-colors">
+                <i class="fab fa-whatsapp text-lg"></i>
+                <span>Solicitar Lotes & Cotización</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECCIÓN DIFERENCIADORES (POR QUÉ ELEGIRNOS - Fondo Oscuro #0E140E)
+       ========================================== -->
+  <section id="diferenciadores" class="py-24 bg-darkbg text-white relative overflow-hidden">
+    <!-- Textura y Brillo sutil de fondo -->
+    <div class="absolute -top-32 -right-32 w-96 h-96 bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-leaf/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+        <!-- Encabezado de Sección lateral -->
+        <div class="lg:col-span-5 space-y-6" data-aos="fade-right">
+          <span class="text-xs sm:text-sm font-bold uppercase tracking-widest text-gold block">
+            Nuestros Pilares
+          </span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-normal font-serif leading-tight text-white">
+            ¿Por Qué Elegir a Grupo Cafetero Armar?
+          </h2>
+          <p class="text-stone-300 text-base leading-relaxed">
+            Respaldamos cada entrega con la garantía de origen de Huatusco, procesos certificados y un trato humano enfocado en potenciar tu negocio.
+          </p>
+
+          <div class="pt-4">
+            <a href="#contacto"
+              class="inline-flex items-center space-x-3 bg-gold hover:bg-gold-hover text-darkbg font-bold py-3.5 px-7 rounded-full shadow-lg transition-all">
+              <span>Hablar con un Asesor</span>
+              <i class="fas fa-chevron-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tarjetas de Diferenciadores -->
+        <div class="lg:col-span-7 space-y-6" data-aos="fade-left">
+
+          <!-- Diferenciador 1 -->
+          <div
+            class="p-6 sm:p-8 rounded-2xl bg-darkcard border border-white/10 hover:border-gold/50 backdrop-blur-md transition-all duration-300 flex items-start space-x-5">
+            <div class="w-14 h-14 rounded-xl bg-gold/20 text-gold flex items-center justify-center text-2xl shrink-0 border border-gold/30">
+              <i class="fas fa-mountain-sun"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white font-serif mb-2">Origen Huatusco, Veracruz</h3>
+              <p class="text-stone-300 text-sm leading-relaxed">
+                Situados en una micro-región cafetalera privilegiada por su altitud, suelo rico en minerales y clima de montaña que produce perfiles aromáticos inconfundibles.
+              </p>
+            </div>
+          </div>
+
+          <!-- Diferenciador 2 -->
+          <div
+            class="p-6 sm:p-8 rounded-2xl bg-darkcard border border-white/10 hover:border-gold/50 backdrop-blur-md transition-all duration-300 flex items-start space-x-5">
+            <div
+              class="w-14 h-14 rounded-xl bg-leaf/30 text-gold flex items-center justify-center text-2xl shrink-0 border border-gold/30">
+              <i class="fas fa-user-check"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white font-serif mb-2">Personal Altamente Capacitado</h3>
+              <p class="text-stone-300 text-sm leading-relaxed">
+                Contamos con maestros tostadores, catadores y técnicos especializados con años de experiencia en el beneficio y tratamiento óptimo del café.
+              </p>
+            </div>
+          </div>
+
+          <!-- Diferenciador 3 -->
+          <div
+            class="p-6 sm:p-8 rounded-2xl bg-darkcard border border-white/10 hover:border-gold/50 backdrop-blur-md transition-all duration-300 flex items-start space-x-5">
+            <div
+              class="w-14 h-14 rounded-xl bg-gold/20 text-gold flex items-center justify-center text-2xl shrink-0 border border-gold/30">
+              <i class="fas fa-shield-halved"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white font-serif mb-2">Garantía de Calidad Consistente</h3>
+              <p class="text-stone-300 text-sm leading-relaxed">
+                Pruebas físicas y sensoriales periódicas para asegurar que cada saco entregado cumpla exactamente con los parámetros acordados.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FRANJA DE CERTIFICACIONES Y VALORES (Fondo Oscuro #0E140E)
+       ========================================== -->
+  <section id="certificaciones" class="py-16 bg-gradient-to-r from-darkbg via-darkcard to-darkbg text-white relative overflow-hidden border-y border-gold/30">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <!-- Valor 1: Origen Huatusco -->
+        <div class="flex items-center space-x-4 p-5 rounded-2xl bg-darkcard border border-white/10 hover:border-gold/50 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-14 h-14 rounded-xl bg-gold/20 text-gold flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 group-hover:bg-gold group-hover:text-darkbg transition-all duration-300 shadow-md">
+            <i class="fas fa-mountain-sun"></i>
+          </div>
+          <div>
+            <h4 class="font-serif font-bold text-white text-base group-hover:text-gold transition-colors">Origen Huatusco</h4>
+            <p class="text-stone-300 text-xs mt-1 leading-relaxed">Café de estricta altura cultivado a más de 1,200 msnm.</p>
+          </div>
+        </div>
+
+        <!-- Valor 2: Garantía de Calidad -->
+        <div class="flex items-center space-x-4 p-5 rounded-2xl bg-darkcard border border-white/10 hover:border-gold/50 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-14 h-14 rounded-xl bg-gold/20 text-gold flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 group-hover:bg-gold group-hover:text-darkbg transition-all duration-300 shadow-md">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div>
+            <h4 class="font-serif font-bold text-white text-base group-hover:text-gold transition-colors">Garantía de Calidad</h4>
+            <p class="text-stone-300 text-xs mt-1 leading-relaxed">Selección física y sensorial estricta del grano oro.</p>
+          </div>
+        </div>
+
+        <!-- Valor 3: Atención Mayorista -->
+        <div class="flex items-center space-x-4 p-5 rounded-2xl bg-darkcard border border-white/10 hover:border-gold/50 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-14 h-14 rounded-xl bg-gold/20 text-gold flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 group-hover:bg-gold group-hover:text-darkbg transition-all duration-300 shadow-md">
+            <i class="fas fa-truck-ramp-box"></i>
+          </div>
+          <div>
+            <h4 class="font-serif font-bold text-white text-base group-hover:text-gold transition-colors">Atención Mayorista</h4>
+            <p class="text-stone-300 text-xs mt-1 leading-relaxed">Suministro constante a tostadores y distribuidores.</p>
+          </div>
+        </div>
+
+        <!-- Valor 4: Comercio Justo -->
+        <div class="flex items-center space-x-4 p-5 rounded-2xl bg-darkcard border border-white/10 hover:border-gold/50 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="400">
+          <div class="w-14 h-14 rounded-xl bg-gold/20 text-gold flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 group-hover:bg-gold group-hover:text-darkbg transition-all duration-300 shadow-md">
+            <i class="fas fa-handshake-angle"></i>
+          </div>
+          <div>
+            <h4 class="font-serif font-bold text-white text-base group-hover:text-gold transition-colors">Comercio Justo</h4>
+            <p class="text-stone-300 text-xs mt-1 leading-relaxed">Compromiso ético y sustentable con las familias cafetaleras.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECCIÓN GALERÍA DE FOTOS (Fondo Claro #EBE7DF)
+       ========================================== -->
+  <section id="galeria" class="py-24 bg-cream relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Encabezado de Sección -->
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <span class="text-xs sm:text-sm font-bold uppercase tracking-widest text-gold mb-2 block">
+          Nuestra Esencia en Imágenes
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-darktext font-serif">
+          Galería del Proceso Cafetero
+        </h2>
+        <p class="text-stone-600 mt-2 text-base">
+          Explora la dedicación en cada etapa: desde los cafetales en la montaña de Huatusco hasta la excelencia en taza.
+        </p>
+        <div class="w-20 h-1 bg-gold mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <!-- Grid Galería Moderno (6 Fotos) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Foto 1: Secado al Sol -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-darkbg border border-cream-accent aspect-[4/3]" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80"
+            alt="Secado de café al sol en patios de Huatusco"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+          <!-- Overlay Semitransparente con Hover Effect -->
+          <div class="absolute inset-0 bg-gradient-to-t from-darkbg/95 via-darkbg/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <span class="text-gold font-bold text-xs uppercase tracking-wider mb-1">Proceso Beneficio</span>
+            <h3 class="text-xl font-bold text-white font-serif transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
+              Secado al Sol
+            </h3>
+            <p class="text-stone-200 text-xs mt-1 transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+              Proceso artesanal de deshidratación uniforme en patios bajo el sol veracruzano.
+            </p>
+          </div>
+        </div>
+
+        <!-- Foto 2: Selección de Grano Oro -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-darkbg border border-cream-accent aspect-[4/3]" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&auto=format&fit=crop&q=80"
+            alt="Selección de Grano Oro clasificado"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-darkbg/95 via-darkbg/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <span class="text-gold font-bold text-xs uppercase tracking-wider mb-1">Clasificación</span>
+            <h3 class="text-xl font-bold text-white font-serif transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
+              Selección de Grano Oro
+            </h3>
+            <p class="text-stone-200 text-xs mt-1 transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+              Clasificación rigurosa por densidad y tamaño para estándares de exportación.
+            </p>
+          </div>
+        </div>
+
+        <!-- Foto 3: Cultivo en Altura -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-darkbg border border-cream-accent aspect-[4/3]" data-aos="fade-up" data-aos-delay="300">
+          <img src="https://images.unsplash.com/photo-1524350876685-274059332603?w=800&auto=format&fit=crop&q=80"
+            alt="Cafetales de estricta altura en Huatusco"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-darkbg/95 via-darkbg/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <span class="text-gold font-bold text-xs uppercase tracking-wider mb-1">Cosecha</span>
+            <h3 class="text-xl font-bold text-white font-serif transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
+              Cultivos de Estricta Altura
+            </h3>
+            <p class="text-stone-200 text-xs mt-1 transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+              Cerezas maduras recolectadas cuidadosamente en las laderas de la Sierra.
+            </p>
+          </div>
+        </div>
+
+        <!-- Foto 4: Tueste Especializado -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-darkbg border border-cream-accent aspect-[4/3]" data-aos="fade-up" data-aos-delay="400">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=800&auto=format&fit=crop&q=80"
+            alt="Proceso de tueste gourmet de café"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-darkbg/95 via-darkbg/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <span class="text-gold font-bold text-xs uppercase tracking-wider mb-1">Maquila & Tueste</span>
+            <h3 class="text-xl font-bold text-white font-serif transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
+              Tueste Especializado
+            </h3>
+            <p class="text-stone-200 text-xs mt-1 transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+              Control técnico de perfiles para maximizar la intensidad aromática.
+            </p>
+          </div>
+        </div>
+
+        <!-- Foto 5: Sacos de Café -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-darkbg border border-cream-accent aspect-[4/3]" data-aos="fade-up" data-aos-delay="500">
+          <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=800&auto=format&fit=crop&q=80"
+            alt="Sacos de yute con grano de café"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-darkbg/95 via-darkbg/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <span class="text-gold font-bold text-xs uppercase tracking-wider mb-1">Empaque</span>
+            <h3 class="text-xl font-bold text-white font-serif transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
+              Empaque Mayorista
+            </h3>
+            <p class="text-stone-200 text-xs mt-1 transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+              Sacos de yute con protección adecuada listos para distribución nacional.
+            </p>
+          </div>
+        </div>
+
+        <!-- Foto 6: Calidad en Taza -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg bg-darkbg border border-cream-accent aspect-[4/3]" data-aos="fade-up" data-aos-delay="600">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&auto=format&fit=crop&q=80"
+            alt="Taza de café recién preparado"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-darkbg/95 via-darkbg/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <span class="text-gold font-bold text-xs uppercase tracking-wider mb-1">Experiencia Final</span>
+            <h3 class="text-xl font-bold text-white font-serif transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
+              Calidad en Cada Taza
+            </h3>
+            <p class="text-stone-200 text-xs mt-1 transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+              Notas achocolatadas, acidez balanceada y cuerpo distintivo de Huatusco.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECCIÓN PREGUNTAS FRECUENTES (FAQ) (Fondo Claro #F4F2EC)
+       ========================================== -->
+  <section id="faq" class="py-24 bg-cream-card border-t border-cream-accent relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Encabezado -->
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="text-xs sm:text-sm font-bold uppercase tracking-widest text-gold mb-2 block">
+          Resolvemos tus Dudas
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-darktext font-serif">
+          Preguntas Frecuentes
+        </h2>
+        <p class="text-stone-600 mt-2 text-base">
+          Respuestas a las consultas más comunes sobre venta al mayoreo, envíos nacionales y maquila.
+        </p>
+        <div class="w-20 h-1 bg-gold mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <!-- Acordeón Interactivo FAQ -->
+      <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Pregunta 1 -->
+        <div class="faq-item bg-white rounded-2xl shadow-md border border-cream-accent overflow-hidden transition-all duration-300">
+          <button type="button"
+            class="faq-header w-full px-6 py-5 text-left flex items-center justify-between space-x-4 hover:bg-stone-50 transition-colors focus:outline-none"
+            aria-expanded="false">
+            <span class="font-serif font-bold text-darktext text-base sm:text-lg flex items-center space-x-3">
+              <span class="w-8 h-8 rounded-full bg-gold/20 text-darkbg flex items-center justify-center text-sm shrink-0 font-bold">1</span>
+              <span>¿Cuál es el volumen mínimo para compras de café al mayoreo?</span>
+            </span>
+            <span class="faq-icon w-8 h-8 rounded-full bg-stone-100 text-stone-600 flex items-center justify-center shrink-0 transition-transform duration-300">
+              <i class="fas fa-chevron-down text-sm"></i>
+            </span>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 pt-2 text-stone-600 text-sm leading-relaxed border-t border-stone-100">
+            Atendemos desde lotes pequeños a partir de 1 quintal (57.5 kg) en café verde oro o tostado, hasta contenedores completos para comercializadores e industrias. Nos adaptamos de forma flexible a los requerimientos de tu empresa.
+          </div>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="faq-item bg-white rounded-2xl shadow-md border border-cream-accent overflow-hidden transition-all duration-300">
+          <button type="button"
+            class="faq-header w-full px-6 py-5 text-left flex items-center justify-between space-x-4 hover:bg-stone-50 transition-colors focus:outline-none"
+            aria-expanded="false">
+            <span class="font-serif font-bold text-darktext text-base sm:text-lg flex items-center space-x-3">
+              <span class="w-8 h-8 rounded-full bg-gold/20 text-darkbg flex items-center justify-center text-sm shrink-0 font-bold">2</span>
+              <span>¿Realizan envíos de café a todo México?</span>
+            </span>
+            <span class="faq-icon w-8 h-8 rounded-full bg-stone-100 text-stone-600 flex items-center justify-center shrink-0 transition-transform duration-300">
+              <i class="fas fa-chevron-down text-sm"></i>
+            </span>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 pt-2 text-stone-600 text-sm leading-relaxed border-t border-stone-100">
+            Sí, coordinamos la logística de envío a cualquier estado de la República Mexicana mediante transportes consolidados de carga o paqueterías especializadas. Para exportación, preparamos empaques GrainPro o yute tradicional y la documentación correspondiente.
+          </div>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="faq-item bg-white rounded-2xl shadow-md border border-cream-accent overflow-hidden transition-all duration-300">
+          <button type="button"
+            class="faq-header w-full px-6 py-5 text-left flex items-center justify-between space-x-4 hover:bg-stone-50 transition-colors focus:outline-none"
+            aria-expanded="false">
+            <span class="font-serif font-bold text-darktext text-base sm:text-lg flex items-center space-x-3">
+              <span class="w-8 h-8 rounded-full bg-gold/20 text-darkbg flex items-center justify-center text-sm shrink-0 font-bold">3</span>
+              <span>¿En qué consisten los servicios de maquila y procesamiento?</span>
+            </span>
+            <span class="faq-icon w-8 h-8 rounded-full bg-stone-100 text-stone-600 flex items-center justify-center shrink-0 transition-transform duration-300">
+              <i class="fas fa-chevron-down text-sm"></i>
+            </span>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 pt-2 text-stone-600 text-sm leading-relaxed border-t border-stone-100">
+            Ofrecemos procesamiento integral o parcial: desmanche, secado artesanal o continuo, trilla para obtención de grano oro, así como tueste personalizado (claro, medio, oscuro), molido a la medida y empacado con las especificaciones de tu marca.
+          </div>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="faq-item bg-white rounded-2xl shadow-md border border-cream-accent overflow-hidden transition-all duration-300">
+          <button type="button"
+            class="faq-header w-full px-6 py-5 text-left flex items-center justify-between space-x-4 hover:bg-stone-50 transition-colors focus:outline-none"
+            aria-expanded="false">
+            <span class="font-serif font-bold text-darktext text-base sm:text-lg flex items-center space-x-3">
+              <span class="w-8 h-8 rounded-full bg-gold/20 text-darkbg flex items-center justify-center text-sm shrink-0 font-bold">4</span>
+              <span>¿Puedo solicitar muestras antes de hacer un pedido grande?</span>
+            </span>
+            <span class="faq-icon w-8 h-8 rounded-full bg-stone-100 text-stone-600 flex items-center justify-center shrink-0 transition-transform duration-300">
+              <i class="fas fa-chevron-down text-sm"></i>
+            </span>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 pt-2 text-stone-600 text-sm leading-relaxed border-t border-stone-100">
+            ¡Por supuesto! Enviamos muestras físicas y fichas técnicas de catación a tostadores y distribuidores interesados. Ponte en contacto con nuestro equipo comercial a través de WhatsApp o nuestro formulario para coordinar el envío.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Banner de Contacto Directo -->
+      <div class="mt-12 text-center p-6 bg-white rounded-2xl border border-gold/30 shadow-md flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0" data-aos="fade-up">
+        <div class="text-left">
+          <h4 class="font-bold text-darktext text-base font-serif">¿Tienes una consulta específica sobre tu proyecto?</h4>
+          <p class="text-stone-600 text-xs mt-0.5">Nuestro equipo de ventas te asesorará de forma inmediata.</p>
+        </div>
+        <a href="#contacto"
+          class="bg-roast hover:bg-leaf text-white text-xs font-bold px-5 py-3 rounded-xl shadow transition-colors shrink-0 flex items-center space-x-2">
+          <i class="fas fa-comments text-gold"></i>
+          <span>Enviar Consulta</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECCIÓN CONTACTO (Fondo Claro #EBE7DF)
+       ========================================== -->
+  <section id="contacto" class="py-24 bg-cream relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Encabezado -->
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <span class="text-xs sm:text-sm font-bold uppercase tracking-widest text-gold mb-2 block">
+          Estamos a tu servicio
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-darktext font-serif">
+          Ponte en Contacto con Nosotros
+        </h2>
+        <p class="text-stone-600 mt-2 text-base">
+          Solicita cotizaciones, información de maquila o visitas a nuestras instalaciones en Huatusco.
+        </p>
+        <div class="w-20 h-1 bg-gold mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+        <!-- Tarjetas de Información de Contacto -->
+        <div class="lg:col-span-5 space-y-6" data-aos="fade-right">
+
+          <div class="bg-cream-card p-8 rounded-2xl shadow-lg border border-cream-accent space-y-6">
+            <h3 class="text-2xl font-bold text-darktext font-serif pb-4 border-b border-cream-accent">
+              Información Corporativa
+            </h3>
+
+            <!-- Ubicación -->
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-darktext/10 text-darktext flex items-center justify-center text-xl shrink-0">
+                <i class="fas fa-location-dot text-gold"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-stone-900 text-sm font-serif">Ubicación</h4>
+                <p class="text-stone-600 text-sm mt-0.5">
+                  Huatusco, Veracruz, México.<br>
+                  C.P. 94100
+                </p>
+              </div>
+            </div>
+
+            <!-- Teléfono y WhatsApp -->
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 rounded-xl bg-leaf/10 text-leaf flex items-center justify-center text-xl shrink-0">
+                <i class="fas fa-phone-volume"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-stone-900 text-sm font-serif">Atención Telefónica / WhatsApp</h4>
+                <a href="https://wa.me/522717390957" target="_blank" rel="noopener noreferrer"
+                  class="text-stone-700 hover:text-leaf font-semibold text-sm mt-0.5 block">
+                  +52 (271) 739 0957
+                </a>
+              </div>
+            </div>
+
+            <!-- Correo Electrónico -->
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-gold/20 text-darkbg flex items-center justify-center text-xl shrink-0">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-stone-900 text-sm font-serif">Correo Electrónico</h4>
+                <a href="mailto:ventas@grupocafeteroarmar.com"
+                  class="text-stone-700 hover:text-leaf font-semibold text-sm mt-0.5 block">
+                  ventas@grupocafeteroarmar.com
+                </a>
+              </div>
+            </div>
+
+            <!-- Horarios -->
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-stone-200/60 text-stone-700 flex items-center justify-center text-xl shrink-0">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-stone-900 text-sm font-serif">Horario de Operación</h4>
+                <p class="text-stone-600 text-sm mt-0.5">
+                  Lunes a Viernes: 8:00 AM - 6:00 PM<br>
+                  Sábados: 8:00 AM - 2:00 PM
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Banner WhatsApp directo -->
+          <div
+            class="p-6 rounded-2xl bg-darkcard border border-gold text-white shadow-xl flex items-center justify-between">
+            <div>
+              <h4 class="font-bold font-serif text-lg text-gold">¿Respuesta Inmediata?</h4>
+              <p class="text-xs text-stone-300 mt-1">Escríbenos directamente a nuestro WhatsApp oficial.</p>
+            </div>
+            <a href="https://wa.me/522717390957?text=Hola%2C%20requiero%20atenci%C3%B3n%20inmediata." target="_blank"
+              rel="noopener noreferrer"
+              class="bg-gold text-darkbg font-bold py-2.5 px-4 rounded-xl text-xs hover:bg-gold-hover transition-colors shrink-0 shadow">
+              Abrir Chat
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Formulario Formspree -->
+        <div class="lg:col-span-7" data-aos="fade-left">
+          <div class="bg-cream-card p-8 sm:p-10 rounded-2xl shadow-xl border border-cream-accent">
+            <h3 class="text-2xl font-bold text-darktext font-serif mb-6">
+              Envíanos un Mensaje
+            </h3>
+
+            <form id="contact-form" action="https://formspree.io/f/xanyvazp" method="POST" class="space-y-6">
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <!-- Nombre Completo -->
+                <div>
+                  <label for="nombre" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
+                    Nombre Completo *
+                  </label>
+                  <input type="text" id="nombre" name="nombre" required placeholder="Ej. Carlos Mendoza"
+                    class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold focus:border-gold outline-none transition-all text-sm bg-white">
+                </div>
+
+                <!-- Correo Electrónico -->
+                <div>
+                  <label for="email" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
+                    Correo Electrónico *
+                  </label>
+                  <input type="email" id="email" name="email" required placeholder="carlos@empresa.com"
+                    class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold focus:border-gold outline-none transition-all text-sm bg-white">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <!-- Teléfono de contacto -->
+                <div>
+                  <label for="telefono" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
+                    Teléfono de Contacto
+                  </label>
+                  <input type="tel" id="telefono" name="telefono" placeholder="(271) 739-0957"
+                    class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold focus:border-gold outline-none transition-all text-sm bg-white">
+                </div>
+
+                <!-- Asunto o Interés principal -->
+                <div>
+                  <label for="interes" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
+                    Servicio de Interés
+                  </label>
+                  <select id="interes" name="interes"
+                    class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold focus:border-gold outline-none transition-all text-sm bg-white">
+                    <option value="Café Verde/Oro">Café Verde / Oro de Altura</option>
+                    <option value="Café Tostado y Molido">Café Tostado y Molido</option>
+                    <option value="Servicio de Maquila">Servicios de Maquila</option>
+                    <option value="Venta al Mayoreo">Venta al Mayoreo</option>
+                    <option value="Otro">Otro Asunto</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Mensaje -->
+              <div>
+                <label for="mensaje" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-2">
+                  Mensaje o Solicitud de Cotización *
+                </label>
+                <textarea id="mensaje" name="mensaje" rows="4" required
+                  placeholder="Describe brevemente tus requerimientos de volumen, tipo de café o fechas solicitadas..."
+                  class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:ring-2 focus:ring-gold focus:border-gold outline-none transition-all text-sm bg-white resize-none"></textarea>
+              </div>
+
+              <!-- Botón de Envío -->
+              <button type="submit"
+                class="w-full bg-roast hover:bg-leaf text-white font-bold py-4 rounded-xl shadow-lg transition-all text-base flex items-center justify-center space-x-2">
+                <i class="fas fa-paper-plane text-gold"></i>
+                <span>Enviar Mensaje</span>
+              </button>
+
+              <!-- Mensajes de estado del formulario -->
+              <div id="form-status" class="hidden"></div>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       BOTÓN FLOTANTE DE WHATSAPP
+       ========================================== -->
+  <a href="https://wa.me/522717390957?text=Hola%20Grupo%20Cafetero%20Armar%2C%20quisiera%20recibir%20informaci%C3%B3n."
+    target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- ==========================================
+       FOOTER (Fondo Completamente Oscuro #0E140E)
+       ========================================== -->
+  <footer class="bg-darkbg text-white border-t border-gold/20 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Línea divisora delgada en tono verdoso apagado (#1C2B1B) -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-darkborder">
+
+        <!-- Columna Marca -->
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-full bg-leaf flex items-center justify-center border border-gold/40">
+              <i class="fas fa-mug-hot text-gold text-lg"></i>
+            </div>
+            <span class="font-serif font-extrabold text-xl text-white tracking-wide">
+              GRUPO CAFETERO ARMAR
+            </span>
+          </div>
+          <p class="text-stone-400 text-sm max-w-sm leading-relaxed">
+            Grupo Cafetero Armar S.A. de C.V. - Fundación 3 de Abril de 2019.<br>
+            Productores, procesadores y comercializadores de café de estricta altura de Huatusco, Veracruz.
+          </p>
+          <div class="text-xs text-gold font-serif italic">
+            "El café habla por ti"
+          </div>
+        </div>
+
+        <!-- Columna Enlaces Rápidos -->
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-gold mb-3">Navegación</h4>
+          <ul class="space-y-2 text-sm text-stone-300">
+            <li><a href="#inicio" class="hover:text-gold transition-colors">Inicio</a></li>
+            <li><a href="#nosotros" class="hover:text-gold transition-colors">Nosotros</a></li>
+            <li><a href="#productos" class="hover:text-gold transition-colors">Productos y Servicios</a></li>
+            <li><a href="#diferenciadores" class="hover:text-gold transition-colors">Por Qué Elegirnos</a></li>
+            <li><a href="#galeria" class="hover:text-gold transition-colors">Galería</a></li>
+            <li><a href="#faq" class="hover:text-gold transition-colors">Preguntas Frecuentes</a></li>
+            <li><a href="#contacto" class="hover:text-gold transition-colors">Contacto</a></li>
+            <li><a href="admin/" class="hover:text-gold transition-colors text-xs text-stone-500">Panel CMS Admin</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Columna Ubicación y Contacto -->
+        <div class="md:col-span-4 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-gold mb-3">Oficina Huatusco</h4>
+          <p class="text-sm text-stone-300 leading-relaxed">
+            Huatusco, Veracruz, México.<br>
+            Teléfono: <a href="tel:522717390957" class="hover:text-gold transition-colors">+52 (271) 739 0957</a><br>
+            Email: <a href="mailto:ventas@grupocafeteroarmar.com" class="hover:text-gold transition-colors">ventas@grupocafeteroarmar.com</a>
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Pie Inferior con Firma de Desarrollador -->
+      <div
+        class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400 space-y-4 sm:space-y-0">
+        <div>
+          &copy; 2026 Grupo Cafetero Armar S.A. de C.V. Todos los derechos reservados.
+        </div>
+        <div class="flex items-center space-x-1">
+          <span>Powered by</span>
+          <a href="https://compubyt.com" target="_blank" rel="noopener noreferrer"
+            class="font-bold text-gold hover:text-white transition-colors underline decoration-gold/40 underline-offset-4">
+            Compubyte
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Librería AOS (Animate On Scroll) JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Script Principal JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

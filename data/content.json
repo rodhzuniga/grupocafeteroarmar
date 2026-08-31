@@ -1,0 +1,84 @@
+{
+  "hero": {
+    "title": "El Auténtico Sabor y Tradición del Café de Altura",
+    "subtitle": "Procesamos y comercializamos café verde, tostado y molido producido en las fértiles tierras montañosas de Huatusco, Veracruz.",
+    "slogan": "el café habla por ti",
+    "cta_whatsapp_text": "Cotizar por WhatsApp",
+    "cta_products_text": "Ver Productos y Servicios"
+  },
+  "nosotros": {
+    "title": "Nuestra Historia y Filosofía de Calidad",
+    "paragraph1": "Grupo Cafetero Armar S.A. de C.V. fue fundada el 3 de abril de 2019 en Huatusco, Veracruz. Nacimos con la visión de llevar la excelencia del grano veracruzano a mercados nacionales e internacionales.",
+    "paragraph2": "Nos caracteriza un riguroso estándar de selección, el respeto por las prácticas agrícolas tradicionales y un compromiso inquebrantable con la atención personalizada a cada uno de nuestros clientes.",
+    "valores": [
+      {
+        "title": "Exigencia",
+        "description": "Seleccionamos minuciosamente cada grano desde el beneficio hasta el tostado final.",
+        "icon": "fa-award"
+      },
+      {
+        "title": "Transparencia",
+        "description": "Relaciones comerciales claras, procesos honestos y trazabilidad total en nuestro café.",
+        "icon": "fa-handshake"
+      },
+      {
+        "title": "Atención Personalizada",
+        "description": "Servicio dedicado a cada cliente para adaptar nuestros granos y servicios de maquila a sus necesidades.",
+        "icon": "fa-user-shield"
+      }
+    ]
+  },
+  "productos": {
+    "section_title": "Nuestros Productos y Servicios",
+    "section_subtitle": "Granos seleccionados con pasión y procesos especializados para la industria cafetalera.",
+    "items": [
+      {
+        "title": "Café Verde / Oro de Altura",
+        "description": "Grano estrictamente de altura (SHG) cultivado a más de 1,200 metros sobre el nivel del mar. Trazabilidad completa y humedad controlada para exportación y beneficio.",
+        "badge": "Calidad de Exportación"
+      },
+      {
+        "title": "Café Tostado y Molido",
+        "description": "Tostado artesanal y de alta precisión que resalta notas acarameladas, frutales y achocolatadas típicas de la región de Huatusco.",
+        "badge": "Sabor Gourmet"
+      },
+      {
+        "title": "Servicios de Maquila y Procesamiento",
+        "description": "Beneficio seco, clasificación por densidad/tamaño, tostado industrial y empaque con válvula desgasificadora para tu propia marca.",
+        "badge": "Servicio Especializado"
+      },
+      {
+        "title": "Venta al Mayoreo",
+        "description": "Suministro constante en sacos de 69 kg para tostadores, distribuidores y cadenas comerciales con precios competitivos de origen.",
+        "badge": "Precios Directos"
+      }
+    ]
+  },
+  "diferenciadores": {
+    "title": "¿Por Qué Elegir a Grupo Cafetero Armar?",
+    "reasons": [
+      {
+        "title": "Origen Huatusco, Veracruz",
+        "detail": "Ubicados en una de las regiones cafetaleras más representativas de México por su altitud, microclima y suelos volcánicos fértiles.",
+        "icon": "fa-mountain-sun"
+      },
+      {
+        "title": "Personal Altamente Capacitado",
+        "detail": "Nuestro equipo técnico cuenta con años de experiencia en catación, clasificación física del grano y curvas de tueste.",
+        "icon": "fa-user-check"
+      },
+      {
+        "title": "Garantía de Calidad",
+        "detail": "Monitoreo riguroso en cada etapa del proceso asegurando tazas limpias, fragantes y consistentes lote tras lote.",
+        "icon": "fa-shield-halved"
+      }
+    ]
+  },
+  "contacto": {
+    "phone": "+52 (273) 123 4567",
+    "whatsapp_number": "522731234567",
+    "email": "contacto@grupocafeteroarmar.com",
+    "address": "Av. Principal S/N, Col. Centro, Huatusco, Veracruz, México. C.P. 94100",
+    "schedule": "Lunes a Viernes: 8:00 AM - 6:00 PM | Sábados: 8:00 AM - 2:00 PM"
+  }
+}

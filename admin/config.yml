@@ -1,0 +1,103 @@
+# ==========================================================================
+# CONFIGURACIÓN DE DECAP CMS - GRUPO CAFETERO ARMAR S.A. DE C.V.
+# ==========================================================================
+
+# Tipo de backend para autenticación y guardado de cambios en Git
+backend:
+  name: git-gateway
+  branch: main # o master según la rama predeterminada de tu repositorio
+
+# Habilita servidor proxy local para pruebas en entorno de desarrollo (decap-cms-proxy)
+local_backend: true
+
+# Configuración de carpetas de medios (Imágenes y archivos subidos)
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+# Título del panel de administración
+site_url: https://grupocafeteroarmar.com
+display_url: https://grupocafeteroarmar.com
+logo_url: https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=120&auto=format&fit=crop&q=80
+
+# Colecciones de contenido administrable
+collections:
+  - name: "pages"
+    label: "Páginas del Sitio"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "landing"
+        label: "Landing Page Principal"
+        file: "data/content.json"
+        description: "Administra todos los textos, imágenes e información de contacto del sitio web."
+        fields:
+          # --- SECCIÓN HERO ---
+          - label: "Sección Hero (Inicio)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Título Principal", name: "title", widget: "string", default: "El Auténtico Sabor y Tradición del Café de Altura" }
+              - { label: "Subtítulo", name: "subtitle", widget: "text", default: "Procesamos y comercializamos café verde, tostado y molido producido en las fértiles tierras de Huatusco, Veracruz." }
+              - { label: "Lema", name: "slogan", widget: "string", default: "el café habla por ti" }
+              - { label: "Imagen de Fondo Hero", name: "bg_image", widget: "image", required: false }
+              - { label: "Texto Botón WhatsApp", name: "cta_whatsapp_text", widget: "string", default: "Cotizar por WhatsApp" }
+              - { label: "Texto Botón Productos", name: "cta_products_text", widget: "string", default: "Ver Productos y Servicios" }
+
+          # --- SECCIÓN NOSOTROS ---
+          - label: "Sección Nosotros"
+            name: "nosotros"
+            widget: "object"
+            fields:
+              - { label: "Título de Sección", name: "title", widget: "string", default: "Nuestra Historia y Filosofía de Calidad" }
+              - { label: "Párrafo 1 (Fundación)", name: "paragraph1", widget: "text", default: "Grupo Cafetero Armar S.A. de C.V. fue fundada el 3 de abril de 2019 en Huatusco, Veracruz. Nacimos con la visión de llevar la excelencia del grano veracruzano a mercados nacionales e internacionales." }
+              - { label: "Párrafo 2 (Filosofía)", name: "paragraph2", widget: "text", default: "Nos caracteriza un riguroso estándar de selección, el respeto por el medio ambiente y un compromiso inquebrantable con la satisfacción de nuestros clientes." }
+              - { label: "Imagen de la Sección", name: "image", widget: "image", required: false }
+              - label: "Valores Corporativos"
+                name: "valores"
+                widget: "list"
+                fields:
+                  - { label: "Título del Valor", name: "title", widget: "string" }
+                  - { label: "Descripción", name: "description", widget: "text" }
+                  - { label: "Icono FontAwesome (ej. fa-award)", name: "icon", widget: "string" }
+
+          # --- SECCIÓN PRODUCTOS Y SERVICIOS ---
+          - label: "Sección Productos y Servicios"
+            name: "productos"
+            widget: "object"
+            fields:
+              - { label: "Título de Sección", name: "section_title", widget: "string", default: "Nuestros Productos y Servicios" }
+              - { label: "Subtítulo de Sección", name: "section_subtitle", widget: "string", default: "Soluciones integrales de alta calidad para comercializadores, tostadores y consumidores exigentes." }
+              - label: "Lista de Productos"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Nombre del Producto/Servicio", name: "title", widget: "string" }
+                  - { label: "Descripción", name: "description", widget: "text" }
+                  - { label: "Imagen", name: "image", widget: "image" }
+                  - { label: "Etiqueta Destacada", name: "badge", widget: "string", required: false }
+
+          # --- SECCIÓN DIFERENCIADORES ---
+          - label: "Sección Por Qué Elegirnos"
+            name: "diferenciadores"
+            widget: "object"
+            fields:
+              - { label: "Título de Sección", name: "title", widget: "string", default: "¿Por Qué Elegir a Grupo Cafetero Armar?" }
+              - label: "Razones / Ventajas"
+                name: "reasons"
+                widget: "list"
+                fields:
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Detalle", name: "detail", widget: "text" }
+                  - { label: "Icono FontAwesome", name: "icon", widget: "string" }
+
+          # --- SECCIÓN CONTACTO Y DATOS ---
+          - label: "Información de Contacto"
+            name: "contacto"
+            widget: "object"
+            fields:
+              - { label: "Teléfono Móvil / WhatsApp", name: "phone", widget: "string", default: "+52 273 123 4567" }
+              - { label: "Número WhatsApp sin espacios (ej. 522731234567)", name: "whatsapp_number", widget: "string", default: "522731234567" }
+              - { label: "Correo Electrónico", name: "email", widget: "string", default: "contacto@grupocafeteroarmar.com" }
+              - { label: "Dirección Física", name: "address", widget: "text", default: "Huatusco, Veracruz, México. C.P. 94100" }
+              - { label: "Horario de Atención", name: "schedule", widget: "string", default: "Lunes a Viernes: 8:00 AM - 6:00 PM | Sábados: 8:00 AM - 2:00 PM" }
