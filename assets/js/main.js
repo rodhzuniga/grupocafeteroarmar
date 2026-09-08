@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initActiveNavObserver();
   initFormspreeHandler();
   initFaqAccordion();
+  initLightbox();
 });
 
 /**
@@ -214,4 +215,127 @@ function initFaqAccordion() {
       }
     });
   });
+}
+
+/**
+ * Inicialización y Configuración de Lightbox para "Nuestra Galería"
+ */
+function initLightbox() {
+  // Configuración de Fancybox v5 cuando la librería está cargada
+  if (typeof Fancybox !== 'undefined') {
+    Fancybox.bind("[data-fancybox='galeria']", {
+      loop: true,
+      protect: true,
+      wheel: 'slide',
+      hideScrollbar: true,
+      autoFocus: false,
+      trapFocus: true,
+      Toolbar: {
+        display: {
+          left: ['infobar'],
+          middle: [],
+          right: ['iterateZoom', 'fullscreen', 'close']
+        }
+      },
+      Images: {
+        zoom: true
+      },
+      Thumbs: false,
+      keyboard: {
+        Escape: 'close',
+        Delete: 'close',
+        Backspace: 'close',
+        PageUp: 'next',
+        PageDown: 'prev',
+        ArrowUp: 'prev',
+        ArrowDown: 'next',
+        ArrowRight: 'next',
+        ArrowLeft: 'prev'
+      }
+    });
+  } else {
+    // Respaldo (Fallback) nativo ligero en caso de que falle la CDN externa
+    const galleryLinks = document.querySelectorAll("[data-fancybox='galeria']");
+    if (!galleryLinks.length) return;
+
+    // Crear elementos de modal fallback dinámico
+    const modal = document.createElement('div');
+    modal.id = 'native-gallery-lightbox';
+    modal.className = 'fixed inset-0 z-[9999] bg-[#0E140E]/95 backdrop-blur-md hidden flex items-center justify-center p-4 transition-all duration-300';
+    modal.innerHTML = `
+      <button type="button" id="lightbox-close" class="absolute top-5 right-5 text-gold hover:text-white text-3xl font-bold p-2 z-10 transition-colors focus:outline-none" aria-label="Cerrar">
+        <i class="fas fa-times"></i>
+      </button>
+      <button type="button" id="lightbox-prev" class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-darkcard/80 border border-gold/40 text-gold hover:text-white flex items-center justify-center text-xl z-10 transition-colors focus:outline-none" aria-label="Anterior">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button type="button" id="lightbox-next" class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-darkcard/80 border border-gold/40 text-gold hover:text-white flex items-center justify-center text-xl z-10 transition-colors focus:outline-none" aria-label="Siguiente">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <div class="relative max-w-5xl max-h-[85vh] flex flex-col items-center select-none">
+        <img id="lightbox-img" src="" alt="Ampliación" class="max-h-[75vh] max-w-full object-contain rounded-lg shadow-2xl border border-gold/30">
+        <div id="lightbox-caption" class="mt-4 text-center text-white font-serif text-base sm:text-lg"></div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    let currentIndex = 0;
+    const items = Array.from(galleryLinks);
+
+    function showImage(index) {
+      if (index < 0) index = items.length - 1;
+      if (index >= items.length) index = 0;
+      currentIndex = index;
+
+      const target = items[currentIndex];
+      const imgSrc = target.getAttribute('href');
+      const caption = target.getAttribute('data-caption') || '';
+
+      const modalImg = modal.querySelector('#lightbox-img');
+      const modalCaption = modal.querySelector('#lightbox-caption');
+
+      modalImg.src = imgSrc;
+      modalCaption.textContent = caption;
+      modal.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    items.forEach((link, idx) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        showImage(idx);
+      });
+    });
+
+    modal.querySelector('#lightbox-close').addEventListener('click', closeModal);
+    modal.querySelector('#lightbox-prev').addEventListener('click', (e) => {
+      e.stopPropagation();
+      showImage(currentIndex - 1);
+    });
+    modal.querySelector('#lightbox-next').addEventListener('click', (e) => {
+      e.stopPropagation();
+      showImage(currentIndex + 1);
+    });
+
+    // Cerrar al hacer clic fuera de la imagen
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal || e.target.id === 'native-gallery-lightbox') {
+        closeModal();
+      }
+    });
+
+    // Navegación con teclado
+    document.addEventListener('keydown', (e) => {
+      if (!modal.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+        if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+      }
+    });
+  }
 }

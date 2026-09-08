@@ -271,3 +271,61 @@ section[id] {
 .gallery-overlay {
   transition: opacity 0.4s ease-in-out;
 }
+
+/* ==========================================
+   PERSONALIZACIÓN FANCYBOX LIGHTBOX (Paleta Corporativa)
+   ========================================== */
+.gallery-card-link {
+  cursor: pointer;
+  display: block;
+}
+
+.fancybox__container {
+  --fancybox-bg: rgba(14, 20, 14, 0.94);
+  --fancybox-accent-color: #C4A462;
+  --fancybox-color: #FFFFFF;
+  --fancybox-opacity: 1;
+  z-index: 9999;
+}
+
+.fancybox__backdrop {
+  background-color: rgba(14, 20, 14, 0.92) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.fancybox__toolbar {
+  --f-button-color: #C4A462;
+  --f-button-hover-color: #FFFFFF;
+  --f-button-bg: rgba(14, 20, 14, 0.6);
+  --f-button-hover-bg: rgba(196, 164, 98, 0.3);
+  padding: 1rem;
+}
+
+.fancybox__nav .carousel__button {
+  --f-button-color: #C4A462;
+  --f-button-hover-color: #FFFFFF;
+  --f-button-bg: rgba(14, 20, 14, 0.7);
+  --f-button-hover-bg: rgba(196, 164, 98, 0.35);
+  border: 1px solid rgba(196, 164, 98, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.fancybox__caption {
+  font-family: var(--font-heading);
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+  background: linear-gradient(to top, rgba(14, 20, 14, 0.95) 0%, rgba(14, 20, 14, 0.6) 70%, transparent 100%);
+  padding: 1.25rem 2rem;
+  border-top: 1px solid rgba(196, 164, 98, 0.2);
+}
+
+.fancybox__counter {
+  font-family: var(--font-body);
+  color: #C4A462;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
