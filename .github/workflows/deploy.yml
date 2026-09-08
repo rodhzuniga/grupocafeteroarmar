@@ -9,6 +9,8 @@ jobs:
   deploy:
     name: 🚀 Subir cambios a cPanel (public_html)
     runs-on: ubuntu-latest
+    env:
+      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
     steps:
       - name: 🚚 Obtener código fuente
         uses: actions/checkout@v4
