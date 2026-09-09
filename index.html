@@ -19,6 +19,13 @@
 
   <title>Grupo Cafetero Armar | Café de Altura Huatusco, Veracruz</title>
 
+  <!-- Favicon e Iconos Oficiales -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="assets/images/logo-icon.png">
+
   <!-- Tailwind CSS vía CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -98,10 +105,8 @@
 
         <!-- Logo de la Empresa -->
         <a href="#inicio" class="flex items-center space-x-3 group">
-          <div
-            class="w-11 h-11 rounded-full bg-leaf flex items-center justify-center border border-gold/40 shadow-lg group-hover:scale-105 transition-transform duration-300">
-            <i class="fas fa-mug-hot text-gold text-xl"></i>
-          </div>
+          <img src="assets/images/logos/logo_armar2.jpeg" alt="Grupo Cafetero Armar - Logotipo"
+            class="w-11 h-11 rounded-full object-cover border border-gold/40 shadow-lg group-hover:scale-105 transition-transform duration-300">
           <div class="flex flex-col">
             <span
               class="font-heading font-bold text-xl text-white tracking-wide leading-tight group-hover:text-gold transition-colors">
@@ -253,7 +258,7 @@
           <!-- Subtítulo -->
           <p class="text-lg sm:text-xl text-stone-300 font-normal leading-relaxed max-w-2xl font-sans">
             En <strong class="text-white font-semibold">Grupo Cafetero Armar</strong> nos dedicamos al
-            cultivo, procesamiento y comercialización de granos de café de estricta altura, cosechados en el corazón
+            procesamiento y comercialización de granos de café de estricta altura, cosechados en el corazón
             de la Sierra de Veracruz.
           </p>
 
@@ -394,14 +399,14 @@
         <div class="lg:col-span-7 space-y-6" data-aos="fade-left">
           <div class="inline-flex items-center space-x-2 px-3 py-1 bg-leaf/10 text-leaf rounded-lg text-sm font-bold">
             <i class="fas fa-calendar-check text-gold"></i>
-            <span>Fundada el 6 de Septiembre de 2019</span>
+            <span data-cms="nosotros.fundacion_badge">Fundada el 6 de Septiembre de 2019</span>
           </div>
 
-          <h3 class="text-2xl sm:text-3xl font-normal text-darktext font-serif leading-snug">
+          <h3 data-cms="nosotros.title" class="text-2xl sm:text-3xl font-normal text-darktext font-serif leading-snug">
             Pasión por la cafeticultura y dignidad por el origen
           </h3>
 
-          <p class="text-stone-700 text-base sm:text-lg leading-relaxed">
+          <p data-cms="nosotros.texto_principal" class="text-stone-700 text-base sm:text-lg leading-relaxed">
             <strong class="text-darktext font-semibold">Grupo Cafetero Armar</strong> Sómos una una empresa mexicana
             fundada el 06 de Septiembre
             de 2019, especializada en la comercialización de Café Verde, Trabajamos de la mano con productores de
@@ -412,7 +417,7 @@
             soluciones confiables y persoanlizadas.
           </p>
 
-          <p class="text-stone-600 text-base leading-relaxed">
+          <p data-cms="nosotros.supervision_texto" class="text-stone-600 text-base leading-relaxed">
             Nuestra ubicación en la Sierra de Veracruz nos otorga variedades de café de altura excepcionales.
             Supervisamos cada fase con estándares estrictos: desmanche, secado en patio, clasificación física en verde y
             curvas óptimas de tueste.
@@ -439,7 +444,8 @@
           </div>
           <div class="relative z-10 max-w-4xl mx-auto text-center space-y-4">
             <i class="fas fa-quote-left text-gold text-3xl sm:text-4xl block mx-auto"></i>
-            <p class="text-xl sm:text-2xl lg:text-3xl font-serif italic text-gold leading-relaxed">
+            <p data-cms="nosotros.quote"
+              class="text-xl sm:text-2xl lg:text-3xl font-serif italic text-gold leading-relaxed">
               "Nuestro compromiso es ser el puente que conecta el trabajo respetuoso de nuestros productores en Huatusco
               con los mercados más exigentes, garantizando trazabilidad, calidad constante y comercio justo en cada
               grano."
@@ -529,7 +535,7 @@
       </div>
 
       <!-- Cuadrícula de los 6 Servicios Oficiales -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <div id="servicios-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
 
         <!-- Servicio 1: Café verde mexicano de diferentes regiones y perfiles -->
         <div
@@ -958,7 +964,7 @@
       </div>
 
       <!-- Grid de Fotos Responsivo (1 col móvil, 2 cols tablet, 3-4 cols escritorio) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div id="galeria-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
         <!-- Foto 1 -->
         <a href="assets/images/galeria/armar_1.jpeg" data-fancybox="galeria"
@@ -1133,7 +1139,7 @@
       </div>
 
       <!-- Acordeón Interactivo FAQ -->
-      <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+      <div id="faq-accordion" class="space-y-4" data-aos="fade-up" data-aos-delay="100">
 
         <!-- Pregunta 1 -->
         <div
@@ -1463,9 +1469,8 @@
         <!-- Columna Marca -->
         <div class="md:col-span-5 space-y-4">
           <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 rounded-full bg-leaf flex items-center justify-center border border-gold/40">
-              <i class="fas fa-mug-hot text-gold text-lg"></i>
-            </div>
+            <img src="assets/images/logos/logo_armar2.jpeg" alt="Grupo Cafetero Armar - Logotipo"
+              class="w-10 h-10 rounded-full object-cover border border-gold/40 shadow">
             <span class="font-serif font-extrabold text-xl text-white tracking-wide">
               GRUPO CAFETERO ARMAR
             </span>
@@ -1535,6 +1540,20 @@
 
   <!-- Script Principal JS -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Netlify Identity Widget (Para aceptar invitaciones y login de administradores) -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function (user) {
+        if (!user) {
+          window.netlifyIdentity.on("login", function () {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 
 </html>

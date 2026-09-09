@@ -2,26 +2,25 @@
 # CONFIGURACIÓN DE DECAP CMS - GRUPO CAFETERO ARMAR S.A. DE C.V.
 # ==========================================================================
 
-# Tipo de backend para autenticación y guardado de cambios en Git
+# 1. Configuración de Backend (Git Gateway con Netlify Identity en producción)
 backend:
-  name: github
-  repo: rodhzuniga/grupocafeteroarmar
+  name: git-gateway
   branch: main
-  site_domain: grupocafeteroarmar.com
 
-# Habilita servidor proxy local para pruebas en entorno de desarrollo (decap-cms-proxy)
+# 2. Habilitar servidor de pruebas local (Local Backend) para desarrollo local
 local_backend: true
 
-# Configuración de carpetas de medios (Imágenes y archivos subidos)
-media_folder: "assets/images"
-public_folder: "/assets/images"
+# 3. Carpetas de Medios e Imágenes
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
 
-# Título del panel de administración
+# 4. Título, idioma y estética del panel de administración
 site_url: https://grupocafeteroarmar.com
 display_url: https://grupocafeteroarmar.com
 logo_url: https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=120&auto=format&fit=crop&q=80
+locale: "es"
 
-# Colecciones de contenido administrable
+# 5. Colección Principal de Contenidos para index.html
 collections:
   - name: "pages"
     label: "Páginas del Sitio"
@@ -30,76 +29,143 @@ collections:
       preview: false
     files:
       - name: "landing"
-        label: "Landing Page Principal"
+        label: "Página Principal (index.html)"
         file: "data/content.json"
-        description: "Administra todos los textos, imágenes e información de contacto del sitio web."
+        description: "Administra todos los contenidos, textos, servicios, diferenciadores, fotos y preguntas frecuentes."
         fields:
-          # --- SECCIÓN HERO ---
-          - label: "Sección Hero (Inicio)"
-            name: "hero"
-            widget: "object"
-            fields:
-              - { label: "Título Principal", name: "title", widget: "string", default: "El Auténtico Sabor y Tradición del Café de Altura" }
-              - { label: "Subtítulo", name: "subtitle", widget: "text", default: "Procesamos y comercializamos café verde, tostado y molido producido en las fértiles tierras de Huatusco, Veracruz." }
-              - { label: "Lema", name: "slogan", widget: "string", default: "el café habla por ti" }
-              - { label: "Imagen de Fondo Hero", name: "bg_image", widget: "image", required: false }
-              - { label: "Texto Botón WhatsApp", name: "cta_whatsapp_text", widget: "string", default: "Cotizar por WhatsApp" }
-              - { label: "Texto Botón Productos", name: "cta_products_text", widget: "string", default: "Ver Productos y Servicios" }
-
-          # --- SECCIÓN NOSOTROS ---
-          - label: "Sección Nosotros"
-            name: "nosotros"
-            widget: "object"
-            fields:
-              - { label: "Título de Sección", name: "title", widget: "string", default: "Nuestra Historia y Filosofía de Calidad" }
-              - { label: "Párrafo 1 (Fundación)", name: "paragraph1", widget: "text", default: "Grupo Cafetero Armar S.A. de C.V. fue fundada el 3 de abril de 2019 en Huatusco, Veracruz. Nacimos con la visión de llevar la excelencia del grano veracruzano a mercados nacionales e internacionales." }
-              - { label: "Párrafo 2 (Filosofía)", name: "paragraph2", widget: "text", default: "Nos caracteriza un riguroso estándar de selección, el respeto por el medio ambiente y un compromiso inquebrantable con la satisfacción de nuestros clientes." }
-              - { label: "Imagen de la Sección", name: "image", widget: "image", required: false }
-              - label: "Valores Corporativos"
-                name: "valores"
-                widget: "list"
-                fields:
-                  - { label: "Título del Valor", name: "title", widget: "string" }
-                  - { label: "Descripción", name: "description", widget: "text" }
-                  - { label: "Icono FontAwesome (ej. fa-award)", name: "icon", widget: "string" }
-
-          # --- SECCIÓN PRODUCTOS Y SERVICIOS ---
-          - label: "Sección Productos y Servicios"
-            name: "productos"
-            widget: "object"
-            fields:
-              - { label: "Título de Sección", name: "section_title", widget: "string", default: "Nuestros Productos y Servicios" }
-              - { label: "Subtítulo de Sección", name: "section_subtitle", widget: "string", default: "Soluciones integrales de alta calidad para comercializadores, tostadores y consumidores exigentes." }
-              - label: "Lista de Productos"
-                name: "items"
-                widget: "list"
-                fields:
-                  - { label: "Nombre del Producto/Servicio", name: "title", widget: "string" }
-                  - { label: "Descripción", name: "description", widget: "text" }
-                  - { label: "Imagen", name: "image", widget: "image" }
-                  - { label: "Etiqueta Destacada", name: "badge", widget: "string", required: false }
-
-          # --- SECCIÓN DIFERENCIADORES ---
-          - label: "Sección Por Qué Elegirnos"
-            name: "diferenciadores"
-            widget: "object"
-            fields:
-              - { label: "Título de Sección", name: "title", widget: "string", default: "¿Por Qué Elegir a Grupo Cafetero Armar?" }
-              - label: "Razones / Ventajas"
-                name: "reasons"
-                widget: "list"
-                fields:
-                  - { label: "Título", name: "title", widget: "string" }
-                  - { label: "Detalle", name: "detail", widget: "text" }
-                  - { label: "Icono FontAwesome", name: "icon", widget: "string" }
-
-          # --- SECCIÓN CONTACTO Y DATOS ---
-          - label: "Información de Contacto"
+          # -------------------------------------------------------------
+          # A. DATOS GENERALES Y CONTACTO
+          # -------------------------------------------------------------
+          - label: "Datos Generales y Contacto"
             name: "contacto"
             widget: "object"
             fields:
-              - { label: "Teléfono Móvil / WhatsApp", name: "phone", widget: "string", default: "+52 273 123 4567" }
-              - { label: "Número WhatsApp sin espacios (ej. 522731234567)", name: "whatsapp_number", widget: "string", default: "522731234567" }
-              - { label: "Correo Electrónico", name: "email", widget: "string", default: "contacto@grupocafeteroarmar.com" }
-              - { label: "Dirección Física", name: "address", widget: "text", default: "Huatusco, Veracruz, México. C.P. 94100" }
-              - { label: "Horario de Atención", name: "schedule", widget: "string", default: "Lunes a Viernes: 8:00 AM - 6:00 PM | Sábados: 8:00 AM - 2:00 PM" }
+              - { label: "Teléfono Visible", name: "phone", widget: "string", default: "+52 (271) 739 0957" }
+              - { label: "Número de WhatsApp (Sólo dígitos)", name: "whatsapp_number", widget: "string", default: "522717390957" }
+              - { label: "Mensaje Base para WhatsApp", name: "whatsapp_default_msg", widget: "string", default: "Hola, me gustaría recibir información sobre su café verde y servicios.", required: false }
+              - { label: "Correo Electrónico de Ventas", name: "email", widget: "string", default: "ventas@grupocafeteroarmar.com" }
+              - { label: "Dirección de Oficina / Beneficio", name: "address", widget: "text", default: "Huatusco, Veracruz, México. C.P. 94100" }
+              - { label: "Horario de Operación", name: "schedule", widget: "string", default: "Lunes a Viernes: 8:00 AM - 6:00 PM | Sábados: 8:00 AM - 2:00 PM" }
+              - { label: "Enlace a Facebook", name: "facebook_url", widget: "string", default: "https://facebook.com/grupocafeteroarmar", required: false }
+              - { label: "Enlace a Instagram", name: "instagram_url", widget: "string", default: "https://instagram.com/grupocafeteroarmar", required: false }
+
+          # -------------------------------------------------------------
+          # B. SECCIÓN HERO (PORTADA PRINCIPAL)
+          # -------------------------------------------------------------
+          - label: "Sección Hero (Portada)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Etiqueta Superior (Badge)", name: "badge", widget: "string", default: "ORIGEN HUATUSCO, VERACRUZ" }
+              - { label: "Título Principal", name: "title", widget: "string", default: "El Auténtico Sabor y Tradición del Café de Altura" }
+              - { label: "Subtítulo / Descripción", name: "subtitle", widget: "text", default: "Procesamos y comercializamos café verde, tostado y molido producido en las fértiles tierras de Huatusco, Veracruz." }
+              - { label: "Lema", name: "slogan", widget: "string", default: "el café habla por ti" }
+              - { label: "Texto Botón WhatsApp", name: "cta_whatsapp_text", widget: "string", default: "Cotizar por WhatsApp" }
+              - { label: "Texto Botón Secundario", name: "cta_contact_text", widget: "string", default: "Ver Productos y Servicios" }
+
+          # -------------------------------------------------------------
+          # C. SECCIÓN ¿QUIÉNES SOMOS?
+          # -------------------------------------------------------------
+          - label: "Sección ¿Quiénes Somos?"
+            name: "nosotros"
+            widget: "object"
+            fields:
+              - { label: "Fecha de Fundación (Insignia)", name: "fundacion_badge", widget: "string", default: "Fundada el 6 de Septiembre de 2019" }
+              - { label: "Título Principal de la Sección", name: "title", widget: "string", default: "Pasión por la cafeticultura y dignidad por el origen" }
+              - { label: "Texto Principal de Presentación", name: "texto_principal", widget: "text", default: "Grupo Cafetero Armar Sómos una una empresa mexicana fundada el 06 de Septiembre de 2019, especializada en la comercialización de Café Verde, Trabajamos de la mano con productores de diversas regiones para ofrecer café de calidad y construir relaciones comerciales duraderas basadas en la confianza, el compromiso y el cumplimiento." }
+              - { label: "Objetivo y Misión", name: "objetivo", widget: "text", default: "Nuestro objetivo es ser aliado estratégico de tostadores y comercializadores e industria, brindando soluciones confiables y persoanlizadas." }
+              - { label: "Supervisión y Origen Sierra de Veracruz", name: "supervision_texto", widget: "text", default: "Nuestra ubicación en la Sierra de Veracruz nos otorga variedades de café de altura excepcionales. Supervisamos cada fase con estándares estrictos: desmanche, secado en patio, clasificación física en verde y curvas óptimas de tueste." }
+              - { label: "Frase Destacada / Cita (Quote Box)", name: "quote", widget: "text", default: "Nuestro compromiso es ser el puente que conecta el trabajo respetuoso de nuestros productores en Huatusco con los mercados más exigentes, garantizando trazabilidad, calidad constante y comercio justo en cada grano." }
+
+          # -------------------------------------------------------------
+          # D. SECCIÓN "NUESTRA ESENCIA" Y PRINCIPIOS
+          # -------------------------------------------------------------
+          - label: "Sección Nuestra Esencia y Principios"
+            name: "principios"
+            widget: "object"
+            fields:
+              - { label: "Título de Sección", name: "title", widget: "string", default: "Nuestra Esencia y Principios" }
+              - label: "Lista de Principios Corporativos"
+                name: "lista"
+                widget: "list"
+                fields:
+                  - { label: "Título del Principio", name: "title", widget: "string" }
+                  - { label: "Descripción", name: "description", widget: "text" }
+                  - { label: "Icono FontAwesome (ej. fa-award, fa-handshake, fa-user-shield)", name: "icon", widget: "string" }
+
+          # -------------------------------------------------------------
+          # E. SERVICIOS / OFERTA ESPECIALIZADA
+          # -------------------------------------------------------------
+          - label: "Servicios / Oferta Especializada"
+            name: "servicios"
+            widget: "object"
+            fields:
+              - { label: "Etiqueta Superior", name: "badge", widget: "string", default: "Café Verde Mexicano & Servicios" }
+              - { label: "Título de Sección", name: "title", widget: "string", default: "Oferta Especializada" }
+              - { label: "Descripción General", name: "description", widget: "text", default: "Soluciones integrales de grano de estricta altura y servicios especializados para comercializadores, tostadores e industria." }
+              - label: "Catálogo de Servicios"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Nombre del Servicio", name: "title", widget: "string" }
+                  - { label: "Etiqueta (Badge)", name: "badge", widget: "string" }
+                  - { label: "Descripción Detallada", name: "description", widget: "text" }
+                  - { label: "Imagen de Referencia", name: "image", widget: "image" }
+                  - { label: "Icono FontAwesome (ej. fa-mountain-sun)", name: "icon", widget: "string" }
+                  - { label: "Texto del Botón", name: "button_text", widget: "string", default: "Cotizar Perfiles" }
+                  - { label: "Mensaje Directo para WhatsApp", name: "whatsapp_text", widget: "string" }
+
+          # -------------------------------------------------------------
+          # F. SECCIÓN ¿POR QUÉ ELEGIRNOS? (TARJETAS DE VALOR)
+          # -------------------------------------------------------------
+          - label: "Sección ¿Por qué elegirnos?"
+            name: "diferenciadores"
+            widget: "object"
+            fields:
+              - { label: "Etiqueta Superior", name: "badge", widget: "string", default: "Nuestros Pilares" }
+              - { label: "Título Principal", name: "title", widget: "string", default: "¿Por Qué Elegir a Grupo Cafetero Armar?" }
+              - { label: "Descripción", name: "description", widget: "text", default: "Respaldamos cada entrega con la garantía de origen de Huatusco, procesos certificados y un trato humano enfocado en potenciar tu negocio." }
+              - label: "Tarjetas de Valor (Confianza, Calidad, Experiencia, Compromiso, Visión)"
+                name: "pilares"
+                widget: "list"
+                fields:
+                  - { label: "Título del Pilar", name: "title", widget: "string" }
+                  - { label: "Detalle / Descripción", name: "detail", widget: "text" }
+                  - { label: "Icono FontAwesome (ej. fa-mountain-sun, fa-user-check, fa-shield-halved)", name: "icon", widget: "string" }
+
+          # -------------------------------------------------------------
+          # G. SECCIÓN "NUESTRA GALERÍA"
+          # -------------------------------------------------------------
+          - label: "Sección Nuestra Galería"
+            name: "galeria"
+            widget: "object"
+            fields:
+              - { label: "Subtítulo / Categoría", name: "subtitle", widget: "string", default: "INSTALACIONES, PROCESO & PASIÓN" }
+              - { label: "Título de la Galería", name: "title", widget: "string", default: "Nuestra Galería" }
+              - { label: "Descripción", name: "description", widget: "text", default: "Un vistazo a nuestro trabajo, la calidad de nuestras instalaciones y la dedicación con la que comercializamos el mejor café verde de altura." }
+              - label: "Fotografías (assets/images/galeria/)"
+                name: "fotos"
+                widget: "list"
+                fields:
+                  - { label: "Archivo de Imagen", name: "image", widget: "image", media_folder: "assets/images/galeria", public_folder: "assets/images/galeria" }
+                  - { label: "Título de la Fotografía", name: "title", widget: "string" }
+                  - { label: "Ubicación / Etiqueta", name: "tag", widget: "string" }
+                  - { label: "Texto Alternativo (SEO/Accesibilidad)", name: "alt", widget: "string" }
+
+          # -------------------------------------------------------------
+          # H. SECCIÓN PREGUNTAS FRECUENTES (FAQS)
+          # -------------------------------------------------------------
+          - label: "Sección Preguntas Frecuentes (FAQs)"
+            name: "faqs"
+            widget: "object"
+            fields:
+              - { label: "Etiqueta Superior", name: "badge", widget: "string", default: "Resolvemos tus Dudas" }
+              - { label: "Título Principal", name: "title", widget: "string", default: "Preguntas Frecuentes" }
+              - { label: "Descripción", name: "description", widget: "text", default: "Respuestas a las consultas más comunes sobre venta al mayoreo, envíos nacionales y maquila." }
+              - label: "Preguntas y Respuestas"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Número Identificador (1, 2, 3...)", name: "number", widget: "string", default: "1" }
+                  - { label: "Pregunta", name: "question", widget: "string" }
+                  - { label: "Respuesta", name: "answer", widget: "text" }

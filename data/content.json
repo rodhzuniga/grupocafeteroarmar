@@ -1,84 +1,207 @@
 {
+  "contacto": {
+    "phone": "+52 (271) 739 0957",
+    "whatsapp_number": "522717390957",
+    "whatsapp_default_msg": "Hola, me gustaría recibir información sobre su café verde y servicios.",
+    "email": "ventas@grupocafeteroarmar.com",
+    "address": "Huatusco, Veracruz, México. C.P. 94100",
+    "schedule": "Lunes a Viernes: 8:00 AM - 6:00 PM | Sábados: 8:00 AM - 2:00 PM",
+    "facebook_url": "https://facebook.com/grupocafeteroarmar",
+    "instagram_url": "https://instagram.com/grupocafeteroarmar"
+  },
   "hero": {
+    "badge": "ORIGEN HUATUSCO, VERACRUZ",
     "title": "El Auténtico Sabor y Tradición del Café de Altura",
-    "subtitle": "Procesamos y comercializamos café verde, tostado y molido producido en las fértiles tierras montañosas de Huatusco, Veracruz.",
+    "subtitle": "Procesamos y comercializamos café verde, tostado y molido producido en las fértiles tierras de Huatusco, Veracruz.",
     "slogan": "el café habla por ti",
     "cta_whatsapp_text": "Cotizar por WhatsApp",
-    "cta_products_text": "Ver Productos y Servicios"
+    "cta_contact_text": "Ver Productos y Servicios"
   },
   "nosotros": {
-    "title": "Nuestra Historia y Filosofía de Calidad",
-    "paragraph1": "Grupo Cafetero Armar S.A. de C.V. fue fundada el 3 de abril de 2019 en Huatusco, Veracruz. Nacimos con la visión de llevar la excelencia del grano veracruzano a mercados nacionales e internacionales.",
-    "paragraph2": "Nos caracteriza un riguroso estándar de selección, el respeto por las prácticas agrícolas tradicionales y un compromiso inquebrantable con la atención personalizada a cada uno de nuestros clientes.",
-    "valores": [
+    "fundacion_badge": "Fundada el 6 de Septiembre de 2019",
+    "title": "Pasión por la cafeticultura",
+    "texto_principal": "Grupo Cafetero Armar Sómos una una empresa mexicana fundada el 06 de Septiembre de 2019, especializada en la comercialización de Café Verde, Trabajamos de la mano con productores de diversas regiones para ofrecer café de calidad y construir relaciones comerciales duraderas basadas en la confianza, el compromiso y el cumplimiento.",
+    "objetivo": "Nuestro objetivo es ser aliado estratégico de tostadores y comercializadores e industria, brindando soluciones confiables y persoanlizadas.",
+    "supervision_texto": "Desde la región montañosa de Veracruz, trabajamos con una amplia diversidad de cafés mexicanos. Comercializamos cafés de distintas regiones, perfiles y calidades, seleccionados cuidadosamente para responder a las necesidades de cada cliente.",
+    "quote": "Nuestro compromiso es ser el puente que conecta el trabajo respetuoso de nuestros productores en Huatusco con los mercados más exigentes, garantizando trazabilidad, calidad constante y comercio justo en cada grano."
+  },
+  "principios": {
+    "title": "Nuestra Esencia y Principios",
+    "lista": [
       {
-        "title": "Exigencia",
-        "description": "Seleccionamos minuciosamente cada grano desde el beneficio hasta el tostado final.",
+        "title": "Exigencia en Origen",
+        "description": "Rigurosa selección de humedad, densidad y calibre del grano oro para entregar lotes consistentes sin defectos.",
         "icon": "fa-award"
       },
       {
-        "title": "Transparencia",
-        "description": "Relaciones comerciales claras, procesos honestos y trazabilidad total en nuestro café.",
+        "title": "Trato Directo",
+        "description": "Alianzas comerciales transparentes con trazabilidad garantizada desde las parcelas de Huatusco.",
         "icon": "fa-handshake"
       },
       {
-        "title": "Atención Personalizada",
-        "description": "Servicio dedicado a cada cliente para adaptar nuestros granos y servicios de maquila a sus necesidades.",
+        "title": "Atención Mayorista",
+        "description": "Adaptamos volúmenes, perfiles de tueste y empaque a la medida exacta de distribuidores y torrefactores.",
         "icon": "fa-user-shield"
       }
     ]
   },
-  "productos": {
-    "section_title": "Nuestros Productos y Servicios",
-    "section_subtitle": "Granos seleccionados con pasión y procesos especializados para la industria cafetalera.",
+  "servicios": {
+    "badge": "Café Verde Mexicano & Servicios",
+    "title": "Oferta Especializada",
+    "description": "Soluciones integrales de grano de estricta altura y servicios especializados para comercializadores, tostadores e industria.",
     "items": [
       {
-        "title": "Café Verde / Oro de Altura",
-        "description": "Grano estrictamente de altura (SHG) cultivado a más de 1,200 metros sobre el nivel del mar. Trazabilidad completa y humedad controlada para exportación y beneficio.",
-        "badge": "Calidad de Exportación"
+        "title": "Café Verde Mexicano",
+        "badge": "Origen & Perfiles",
+        "description": "Café verde mexicano de diferentes regiones y perfiles (Chiapas, Veracruz y Oaxaca) de estricta altura.",
+        "image": "https://images.unsplash.com/photo-1587734195503-904fca47e0e9?w=800&auto=format&fit=crop&q=80&fm=webp",
+        "icon": "fa-mountain-sun",
+        "button_text": "Cotizar Perfiles",
+        "whatsapp_text": "Hola, solicito cotización de Café Verde Mexicano."
       },
       {
-        "title": "Café Tostado y Molido",
-        "description": "Tostado artesanal y de alta precisión que resalta notas acarameladas, frutales y achocolatadas típicas de la región de Huatusco.",
-        "badge": "Sabor Gourmet"
+        "title": "Abastecimiento Flexible",
+        "badge": "Volumen Flexible",
+        "description": "Abastecimiento para pequeños y grandes volúmenes, adaptándonos al ritmo y escala de tu negocio.",
+        "image": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&auto=format&fit=crop&q=80&fm=webp",
+        "icon": "fa-boxes-packing",
+        "button_text": "Consultar Volúmenes",
+        "whatsapp_text": "Hola, requiero abastecimiento de volumen de café."
       },
       {
-        "title": "Servicios de Maquila y Procesamiento",
-        "description": "Beneficio seco, clasificación por densidad/tamaño, tostado industrial y empaque con válvula desgasificadora para tu propia marca.",
-        "badge": "Servicio Especializado"
+        "title": "Trato Directo & Justo",
+        "badge": "Trato Directo",
+        "description": "Relación directa y justa con productores, promoviendo el comercio transparente y la sostenibilidad.",
+        "image": "https://images.unsplash.com/photo-1524350876685-274059332603?w=800&auto=format&fit=crop&q=80&fm=webp",
+        "icon": "fa-handshake-angle",
+        "button_text": "Conocer Trazabilidad",
+        "whatsapp_text": "Hola, me interesa conocer más sobre la relación directa con productores."
       },
       {
-        "title": "Venta al Mayoreo",
-        "description": "Suministro constante en sacos de 69 kg para tostadores, distribuidores y cadenas comerciales con precios competitivos de origen.",
-        "badge": "Precios Directos"
+        "title": "Atención Personalizada",
+        "badge": "Asesoría Dedicada",
+        "description": "Atención personalizada constante para acompañarte en cada fase de selección y pedido.",
+        "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80&fm=webp",
+        "icon": "fa-headset",
+        "button_text": "Solicitar Asesoría",
+        "whatsapp_text": "Hola, requiero atención personalizada para un pedido."
+      },
+      {
+        "title": "Cumplimiento & Seriedad",
+        "badge": "Seriedad Comercial",
+        "description": "Cumplimiento y seriedad en cada negociación, respetando los estándares y compromisos pactados.",
+        "image": "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=800&auto=format&fit=crop&q=80&fm=webp",
+        "icon": "fa-file-contract",
+        "button_text": "Consultar Garantía",
+        "whatsapp_text": "Hola, deseo información sobre sus garantías y cumplimiento."
+      },
+      {
+        "title": "Soluciones Comerciales",
+        "badge": "Propuestas a la Medida",
+        "description": "Soluciones comerciales adaptadas a las necesidades de cada cliente, brindando flexibilidad operativa.",
+        "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&auto=format&fit=crop&q=80&fm=webp",
+        "icon": "fa-sliders",
+        "button_text": "Diseñar Solución",
+        "whatsapp_text": "Hola, busco una solución comercial a la medida."
       }
     ]
   },
   "diferenciadores": {
+    "badge": "Nuestros Pilares",
     "title": "¿Por Qué Elegir a Grupo Cafetero Armar?",
-    "reasons": [
+    "description": "Respaldamos cada entrega con la garantía de origen de Huatusco, procesos certificados y un trato humano enfocado en potenciar tu negocio.",
+    "pilares": [
       {
-        "title": "Origen Huatusco, Veracruz",
-        "detail": "Ubicados en una de las regiones cafetaleras más representativas de México por su altitud, microclima y suelos volcánicos fértiles.",
+        "title": "Confianza",
+        "detail": "Café verde mexicano de diferentes regiones y perfiles: Chiapas, Veracruz y Oaxaca.",
         "icon": "fa-mountain-sun"
       },
       {
-        "title": "Personal Altamente Capacitado",
-        "detail": "Nuestro equipo técnico cuenta con años de experiencia en catación, clasificación física del grano y curvas de tueste.",
+        "title": "Calidad y Experiencia",
+        "detail": "Cuidamos cada detalle para entregar café que cumple con los más altos estándares. Conocimiento del mercado y de la cadena de valor del café.",
         "icon": "fa-user-check"
       },
       {
-        "title": "Garantía de Calidad",
-        "detail": "Monitoreo riguroso en cada etapa del proceso asegurando tazas limpias, fragantes y consistentes lote tras lote.",
+        "title": "Compromiso y Visión",
+        "detail": "Seriedad, responsabilidad y pasión por el café mexicano. Crecer juntos y generar oportunidades de negocio a largo plazo.",
         "icon": "fa-shield-halved"
       }
     ]
   },
-  "contacto": {
-    "phone": "+52 (273) 123 4567",
-    "whatsapp_number": "522731234567",
-    "email": "contacto@grupocafeteroarmar.com",
-    "address": "Av. Principal S/N, Col. Centro, Huatusco, Veracruz, México. C.P. 94100",
-    "schedule": "Lunes a Viernes: 8:00 AM - 6:00 PM | Sábados: 8:00 AM - 2:00 PM"
+  "galeria": {
+    "subtitle": "INSTALACIONES, PROCESO & PASIÓN",
+    "title": "Nuestra Galería",
+    "description": "Un vistazo a nuestro trabajo, la calidad de nuestras instalaciones y la dedicación con la que comercializamos el mejor café verde de altura.",
+    "fotos": [
+      {
+        "image": "assets/images/galeria/armar_1.jpeg",
+        "title": "Instalaciones & Beneficio",
+        "tag": "Huatusco, Veracruz",
+        "alt": "Instalaciones y Control de Calidad"
+      },
+      {
+        "image": "assets/images/galeria/armar_2.jpeg",
+        "title": "Selección de Grano Verde",
+        "tag": "Calidad en Grano",
+        "alt": "Selección de Grano Verde"
+      },
+      {
+        "image": "assets/images/galeria/armar_3.jpeg",
+        "title": "Bodega & Almacenamiento",
+        "tag": "Infraestructura",
+        "alt": "Bodega y Almacenamiento de Café"
+      },
+      {
+        "image": "assets/images/galeria/armar_4.jpeg",
+        "title": "Sacos de Exportación",
+        "tag": "Empaque & Logística",
+        "alt": "Empaque y Sacos de Exportación"
+      },
+      {
+        "image": "assets/images/galeria/armar_5.jpeg",
+        "title": "Supervisión de Grano",
+        "tag": "Control de Calidad",
+        "alt": "Supervisión y Control de Calidad"
+      },
+      {
+        "image": "assets/images/galeria/armar_6.jpeg",
+        "title": "Proceso en Beneficio",
+        "tag": "Operación & Trabajo",
+        "alt": "Procesamiento en Beneficio"
+      },
+      {
+        "image": "assets/images/galeria/armar_7.jpeg",
+        "title": "Grupo Cafetero Armar",
+        "tag": "Origen & Tradición",
+        "alt": "Grupo Cafetero Armar - Pasión por el Café"
+      }
+    ]
+  },
+  "faqs": {
+    "badge": "Resolvemos tus Dudas",
+    "title": "Preguntas Frecuentes",
+    "description": "Respuestas a las consultas más comunes sobre venta al mayoreo, envíos nacionales y maquila.",
+    "items": [
+      {
+        "number": "1",
+        "question": "¿Cuál es el volumen mínimo para compras de café al mayoreo?",
+        "answer": "Atendemos desde lotes pequeños a partir de 1 quintal (57.5 kg) en café verde oro o tostado, hasta contenedores completos para comercializadores e industrias. Nos adaptamos de forma flexible a los requerimientos de tu empresa."
+      },
+      {
+        "number": "2",
+        "question": "¿Realizan envíos de café a todo México?",
+        "answer": "Sí, coordinamos la logística de envío a cualquier estado de la República Mexicana mediante transportes consolidados de carga o paqueterías especializadas. Para exportación, preparamos empaques GrainPro o yute tradicional y la documentación correspondiente."
+      },
+      {
+        "number": "3",
+        "question": "¿En qué consisten los servicios de maquila y procesamiento?",
+        "answer": "Ofrecemos procesamiento integral o parcial: desmanche, secado artesanal o continuo, trilla para obtención de grano oro, así como tueste personalizado (claro, medio, oscuro), molido a la medida y empacado con las especificaciones de tu marca."
+      },
+      {
+        "number": "4",
+        "question": "¿Puedo solicitar muestras antes de hacer un pedido grande?",
+        "answer": "¡Por supuesto! Enviamos muestras físicas y fichas técnicas de catación a tostadores y distribuidores interesados. Ponte en contacto con nuestro equipo comercial a través de WhatsApp o nuestro formulario para coordinar el envío."
+      }
+    ]
   }
 }

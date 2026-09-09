@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFormspreeHandler();
   initFaqAccordion();
   initLightbox();
+  initDynamicContentLoader();
 });
 
 /**
@@ -337,5 +338,183 @@ function initLightbox() {
         if (e.key === 'ArrowRight') showImage(currentIndex + 1);
       }
     });
+  }
+}
+
+/**
+ * Carga dinámica y reactiva de contenidos desde data/content.json (Decap CMS)
+ */
+async function initDynamicContentLoader() {
+  try {
+    const response = await fetch(`data/content.json?t=${Date.now()}`, { cache: 'no-cache' });
+    if (!response.ok) return;
+    const data = await response.json();
+
+    // 1. Mapeo de elementos de texto simples con data-cms="seccion.campo"
+    document.querySelectorAll('[data-cms]').forEach(el => {
+      const keyPath = el.getAttribute('data-cms');
+      const val = getNestedValue(data, keyPath);
+      if (val !== undefined && val !== null && String(val).trim() !== '') {
+        el.textContent = val;
+      }
+    });
+
+    // 2. Mapeo de elementos con soporte HTML con data-cms-html="seccion.campo"
+    document.querySelectorAll('[data-cms-html]').forEach(el => {
+      const keyPath = el.getAttribute('data-cms-html');
+      const val = getNestedValue(data, keyPath);
+      if (val !== undefined && val !== null && String(val).trim() !== '') {
+        el.innerHTML = val;
+      }
+    });
+
+    // 3. Actualización de Contacto (Teléfonos, WhatsApp, Correo)
+    if (data.contacto) {
+      if (data.contacto.phone) {
+        document.querySelectorAll('[data-cms-phone]').forEach(el => {
+          el.textContent = data.contacto.phone;
+          if (el.tagName === 'A') el.href = `tel:${data.contacto.phone.replace(/[^0-9+]/g, '')}`;
+        });
+      }
+      if (data.contacto.whatsapp_number) {
+        const cleanWa = data.contacto.whatsapp_number.replace(/[^0-9]/g, '');
+        document.querySelectorAll('[data-cms-whatsapp]').forEach(el => {
+          if (el.tagName === 'A') el.href = `https://wa.me/${cleanWa}`;
+        });
+      }
+      if (data.contacto.email) {
+        document.querySelectorAll('[data-cms-email]').forEach(el => {
+          el.textContent = data.contacto.email;
+          if (el.tagName === 'A') el.href = `mailto:${data.contacto.email}`;
+        });
+      }
+    }
+
+    // 4. Actualizar Servicios dinámicamente si fueron editados en el CMS
+    if (data.servicios && Array.isArray(data.servicios.items)) {
+      renderDynamicServices(data.servicios.items, data.contacto?.whatsapp_number);
+    }
+
+    // 5. Actualizar Galería de Fotos si fueron editadas en el CMS
+    if (data.galeria && Array.isArray(data.galeria.fotos)) {
+      renderDynamicGallery(data.galeria.fotos);
+    }
+
+    // 6. Actualizar Preguntas Frecuentes si fueron editadas en el CMS
+    if (data.faqs && Array.isArray(data.faqs.items)) {
+      renderDynamicFaqs(data.faqs.items);
+    }
+
+    console.log("%c[Decap CMS Data]%c Contenido sincronizado exitosamente desde data/content.json", "color: #C4A462; font-weight: bold;", "color: #1C241B;");
+  } catch (err) {
+    console.debug('Aviso: Ejecutando en modo estático predeterminado (data/content.json no cargó):', err);
+  }
+}
+
+function getNestedValue(obj, path) {
+  if (!obj || !path) return undefined;
+  return path.split('.').reduce((acc, part) => (acc && acc[part] !== undefined) ? acc[part] : undefined, obj);
+}
+
+function renderDynamicServices(items, whatsappNumber) {
+  const container = document.getElementById('servicios-grid');
+  if (!container || !items.length) return;
+
+  const waNumber = (whatsappNumber || '522717390957').replace(/[^0-9]/g, '');
+
+  container.innerHTML = items.map((item, idx) => {
+    const delay = ((idx % 3) + 1) * 100;
+    const waText = encodeURIComponent(item.whatsapp_text || `Hola, solicito cotización de ${item.title}`);
+    const isGreenTheme = idx % 2 !== 0;
+    const badgeBg = isGreenTheme ? 'bg-[#2D5A27] text-white' : 'gold-badge text-darkbg';
+    const iconBg = isGreenTheme ? 'bg-[#2D5A27]/15 text-[#2D5A27] border-[#2D5A27]/30 group-hover:bg-[#2D5A27] group-hover:text-white' : 'bg-[#C4A462]/15 text-[#C4A462] border-[#C4A462]/30 group-hover:bg-[#C4A462] group-hover:text-darkbg';
+
+    return `
+      <div class="product-card bg-cream-card rounded-2xl overflow-hidden shadow-md border border-cream-accent hover:border-[#C4A462] flex flex-col justify-between transition-all duration-300 group" data-aos="fade-up" data-aos-delay="${delay}">
+        <div>
+          <div class="relative h-52 overflow-hidden">
+            <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover img-zoom" loading="lazy">
+            <span class="absolute top-3 right-3 ${badgeBg} font-bold px-3 py-1 rounded-full text-xs shadow-md">
+              ${item.badge || 'Calidad de Altura'}
+            </span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center space-x-3 mb-3">
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center text-xl shrink-0 border transition-colors duration-300 ${iconBg}">
+                <i class="fas ${item.icon || 'fa-coffee'}"></i>
+              </div>
+              <h3 class="text-xl font-bold text-[#1C241B] font-serif leading-tight">
+                ${item.title}
+              </h3>
+            </div>
+            <p class="text-stone-600 text-sm leading-relaxed mb-2">
+              ${item.description}
+            </p>
+          </div>
+        </div>
+        <div class="px-6 pb-6">
+          <a href="https://wa.me/${waNumber}?text=${waText}" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 bg-roast hover:bg-leaf text-white font-semibold text-sm rounded-xl text-center flex items-center justify-center space-x-2 transition-colors shadow-sm">
+            <i class="fab fa-whatsapp text-base"></i>
+            <span>${item.button_text || 'Cotizar Perfiles'}</span>
+          </a>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderDynamicGallery(fotos) {
+  const container = document.getElementById('galeria-grid');
+  if (!container || !fotos.length) return;
+
+  container.innerHTML = fotos.map((foto, idx) => {
+    const delay = ((idx % 7) + 1) * 100;
+    const isSpan = idx === 6 ? 'sm:col-span-2 lg:col-span-1 xl:col-span-2' : '';
+    return `
+      <a href="${foto.image}" data-fancybox="galeria" data-caption="${foto.title} - ${foto.tag || ''}" class="gallery-card-link group relative block overflow-hidden rounded-lg bg-[#F4F2EC] border border-[#C4A462]/30 hover:border-[#C4A462] shadow-md cursor-pointer transition-all duration-300 ${isSpan}" data-aos="fade-up" data-aos-delay="${delay}">
+        <div class="relative h-64 overflow-hidden">
+          <img src="${foto.image}" alt="${foto.alt || foto.title}" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0E140E]/95 via-[#0E140E]/35 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+            <div class="w-8 h-8 rounded-full bg-[#0E140E]/70 text-[#C4A462] border border-[#C4A462]/50 flex items-center justify-center text-xs mb-2 group-hover:scale-110 group-hover:bg-[#C4A462] group-hover:text-[#0E140E] transition-all duration-300 shadow">
+              <i class="fas fa-magnifying-glass-plus"></i>
+            </div>
+            <span class="text-[#C4A462] text-xs font-bold uppercase tracking-wider mb-1 font-sans">${foto.tag || 'Huatusco'}</span>
+            <h3 class="text-white font-serif font-bold text-base">${foto.title}</h3>
+          </div>
+        </div>
+      </a>
+    `;
+  }).join('');
+
+  if (typeof initLightbox === 'function') {
+    initLightbox();
+  }
+}
+
+function renderDynamicFaqs(items) {
+  const container = document.getElementById('faq-accordion');
+  if (!container || !items.length) return;
+
+  container.innerHTML = items.map((item, idx) => {
+    return `
+      <div class="faq-item bg-white rounded-2xl shadow-md border border-cream-accent overflow-hidden transition-all duration-300">
+        <button type="button" class="faq-header w-full px-6 py-5 text-left flex items-center justify-between space-x-4 hover:bg-stone-50 transition-colors focus:outline-none" aria-expanded="false">
+          <span class="font-serif font-bold text-darktext text-base sm:text-lg flex items-center space-x-3">
+            <span class="w-8 h-8 rounded-full bg-gold/20 text-darkbg flex items-center justify-center text-sm shrink-0 font-bold">${item.number || (idx + 1)}</span>
+            <span>${item.question}</span>
+          </span>
+          <span class="faq-icon w-8 h-8 rounded-full bg-stone-100 text-stone-600 flex items-center justify-center shrink-0 transition-transform duration-300">
+            <i class="fas fa-chevron-down text-sm"></i>
+          </span>
+        </button>
+        <div class="faq-content hidden px-6 pb-6 pt-2 text-stone-600 text-sm leading-relaxed border-t border-stone-100">
+          ${item.answer}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  if (typeof initFaqAccordion === 'function') {
+    initFaqAccordion();
   }
 }

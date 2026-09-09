@@ -3,19 +3,44 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex" />
+  <meta name="robots" content="noindex, nofollow" />
   <title>Panel de Administración | Grupo Cafetero Armar</title>
-  
-  <!-- Identity Widget de Netlify/Decap CMS para Autenticación -->
+
+  <!-- Favicon e Iconos Oficiales -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+  <link rel="shortcut icon" href="../assets/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
+
+  <!-- Ruta explícita a la configuración para Decap CMS -->
+  <link href="config.yml" type="text/yaml" rel="cms-config-url" />
+
+  <!-- Corrección automática de URL si falta la diagonal final (/admin -> /admin/) -->
+  <script>
+    if (!window.location.pathname.endsWith('/') && !window.location.pathname.endsWith('.html')) {
+      window.location.replace(window.location.pathname + '/' + window.location.search + window.location.hash);
+    }
+  </script>
+
+  <!-- Netlify Identity Widget para Autenticación en Producción -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- Contenedor Principal de Decap CMS -->
+  <!-- Script oficial de Decap CMS v3 -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
-  <!-- Script de Inicialización del Widget de Autenticación (Netlify Identity) -->
+  <!-- Script de Configuración: Modo Local (Localhost) vs Modo Producción -->
   <script>
-    if (window.netlifyIdentity) {
+    const isLocalhost = Boolean(
+      window.location.hostname === 'localhost' ||
+      window.location.hostname === '[::1]' ||
+      window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/)
+    );
+
+    if (isLocalhost) {
+      console.log("%c[Decap CMS]%c Servidor local detectado. El backend local se conecta a http://localhost:8081/api/v1", "color: #C4A462; font-weight: bold;", "color: #1C241B;");
+    } else if (window.netlifyIdentity) {
+      // En producción: redirección automática al autenticarse vía Netlify Identity
       window.netlifyIdentity.on("init", function(user) {
         if (!user) {
           window.netlifyIdentity.on("login", function() {
